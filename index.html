@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+
+		<title>reveal.js - Math Plugin</title>
+
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+
+		<link rel="stylesheet" href="reveal/dist/reveal.css" />
+		<link rel="stylesheet" href="reveal/dist/theme/white.css" id="theme" />
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="robotanim.css">
+
+  </head>
+
+	<body>
+
+    <div id="slide-header" class="slide-header">
+      <iframe
+        src="sirius-logo.html?scale=1.1&basecolor=%234040F0&hicolor=%238080FF"
+        width="60pt"
+        height="50pt"
+        frameborder="0"
+        scrolling="no">
+      </iframe>
+      <div class="subtitle" id="slide-subtitle">##</div>
+    </div>
+
+    <div style="position: fixed; right: 10pt; top: 5pt;">
+      <img style="width: 200px;" src="media/IFAC_Logo.gif" alt="IFAC-logo">
+    </div>
+
+    <div class="slide-foot">
+      <div style="display: flex; gap: 1.5rem; align-items: center">
+        <div class="robot">
+          <div class="antenna left"></div>
+          <div class="antenna right"></div>
+          <div class="leg left"></div>
+          <div class="leg right"></div>
+          <div class="arm left"></div>
+          <div class="head"></div>
+          <div class="nose"></div>
+          <div class="eye"></div>
+          <div class="body"></div>
+          <div class="arm right"></div>
+        </div>
+        <div>
+          <div class="title">Сингулярная редуцированная динамика</div>
+          <div class="author">
+            М. О. Суров
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="slides">
+
+        <section data-title="">
+          <h1>
+            Сервосвязи и сингулярности редуцированной динамики в задачах планирования траекторий механических систем
+          </h1>
+
+          <br>
+
+          <div class="cols">
+
+            <div>
+              <div style="flex: 0.8">
+                <div class="author" style="margin-top: 12pt; margin-bottom: 12pt; margin-left: 50pt; text-align: left;">
+                  Максим Олегович Суров<br>
+                  <a class="email">&#9993 surov.mo@gmail.com</a>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0pt; align-items: margin-left; margin-left: 30pt; margin-top: 10pt;">
+                <div style="height: 100pt">
+                  <iframe
+                    src="sirius-logo.html?scale=2.0&period=8&basecolor=%23108090&hicolor=%23C0C0C0"
+                    width="110pt"
+                    height="100%"
+                    frameborder="0"
+                    scrolling="no">
+                  </iframe>
+                </div>
+                <div>
+                  <div class="organization-title">
+                    Сириус
+                  </div>
+                  <div class="organization-subtitle">
+                    научно-технологический университет <br>
+                    Сочи, Россия
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="video-frame">
+                <video src="media/forth-and-back.mp4" controls autoplay muted loop playsinline></video>
+                <div class="video-credit">
+                  <a href="https://youtu.be/v6cUUEJ9Aaw">youtu.be/v6cUUEJ9Aaw</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+        <section data-title="Неполноприводные роботы">
+          <div class="cols" style="align-items: center;">
+            <div class="regular" style="margin-top: 2rem">
+              Динамика робота описывается системой дифференциальных уравнений
+              $$
+                M\!\left(q\right)\ddot{q}+C\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) u,
+              $$
+              $$
+                \quad q \in \mathbb{R}^2,
+                \quad u \in \mathbb{R},
+                \quad x \equiv (q, \dot q) \in \mathbb{R}^4,
+              $$
+              где
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>$q$</td>
+                    <td>generalized coordinates</td>
+                  </tr>
+                  <tr>
+                    <td>$\dot q \equiv \frac{dq}{dt}$, $\ddot q \equiv \frac{d^2q}{dt^2}$</td>
+                    <td>generalized velocities and acceletations</td>
+                  </tr>
+                  <tr>
+                    <td>$u$</td>
+                    <td>control input</td>
+                  </tr>
+                  <tr>
+                    <td>$M(q) \in \mathbb{R}^{2\times 2}$</td>
+                    <td>positive definite symmetric matrix</td>
+                  </tr>
+                  <tr>
+                    <td>$C(q, \dot q) \in \mathbb{R}^{2\times 2}$</td>
+                    <td>a matrix function which is linear in $\dot q$</td>
+                  </tr>
+                  <tr>
+                    <td>$G(q) \in \mathbb{R}^2$</td>
+                    <td>contains potential forces</td>
+                  </tr>
+                  <tr>
+                    <td>$F(q) \in \mathbb{R}^{2}$</td>
+                    <td>is a nonzero vector field</td>
+                  </tr>
+                </tbody>
+              </table>
+              The system admits a periodic solution
+              $$
+                q_\star(t + T) = q_\star(t), \quad u_\star(t + T) = u_\star(t), \quad T > 0.
+              $$
+            </div>
+            <div class="fragment fade-left">
+              <div class="box remark">
+                <title>Problem:</title>
+                Construct a state-feedback controller
+                $$u = u(q, \dot q),$$
+                such that the closed-loop system
+                $$
+                  M\left(q\right)\ddot{q}+C\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) \, u(q, \dot q)
+                $$
+                renders
+                $$
+                  x_\star(t) = \bigl(q_\star(t),\dot q_\star(t)\bigr)
+                $$
+                a solution that is <b>asymptotically orbitally stable</b>.
+              </div>
+            </div>
+          </div>
+        </section>
+
+			</div>
+		</div>
+
+    <div class="page-number" id="page-number">1 / 1</div>
+
+		<script src="reveal/dist/reveal.js"></script>
+		<script src="reveal/dist/plugin/math.js"></script>
+
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+				mathjax4: {
+					tex: {
+						inlineMath: [['$', '$'], ['\\(', '\\)']],
+						displayMath: [['$$', '$$'], ['\\[', '\\]']],
+					},
+					options: {
+						skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+					},
+					output: {
+						font: 'mathjax-stix2',
+						displayOverflow: 'linebreak',
+						linebreaks: {             // options for when overflow is linebreak
+							inline: true,              // true for browser-based breaking of inline equations
+							width: '100%',             // a fixed size or a percentage of the container width
+							lineleading: .2,           // the default lineleading in em units
+							LinebreakVisitor: null     // The LinebreakVisitor to use
+						}
+					}
+				},
+				plugins: [ RevealMath.KaTeX ],
+			});
+
+      function countSections() {
+        // count top-level sections only (not vertical stacks), emulate visible slides count
+        const secs = Array.from(document.querySelectorAll('.reveal .slides > section'));
+        // include vertically nested sections: flatten
+        let count = 0;
+        secs.forEach(s => {
+          const children = s.querySelectorAll('section');
+          if (children.length) {
+            count += children.length;
+          } else {
+            count +=1;
+          }
+        });
+        return count;
+      }
+
+      // Helper to update page number and subtitle
+      function updateStatus() {
+        const indices = Reveal.getIndices();
+        const total = countSections();
+
+        // Compute linear index (1-based): horizontal index plus vertical offset
+        // Reveal offers getTotalSlides() but not in all builds; compute manually
+        const horizontal = indices.h || 0;
+        const vertical = indices.v || 0;
+
+        // Create a simple mapping: iterate all top-level sections and accumulate
+        const tops = Array.from(document.querySelectorAll('.reveal .slides > section'));
+        let linearIndex = 0;
+
+        for(let i=0; i < tops.length; i++){
+          const nested = tops[i].querySelectorAll('section');
+          if(nested.length){
+            if(i < horizontal) linearIndex += nested.length;
+            else if(i === horizontal) linearIndex += (vertical + 1);
+          } else {
+            if(i < horizontal) linearIndex += 1;
+            else if(i === horizontal) linearIndex += 1; // This is okay, but the logic is slightly clunky
+          }
+        }
+
+        if (linearIndex === 0) linearIndex = 1; // fallback
+
+        // Update DOM
+        const badge = document.getElementById('page-number');
+        badge.textContent = linearIndex + ' / ' + total;
+
+        // Update slide subtitle from the slide's h2 or data-title
+        const current = Reveal.getCurrentSlide();
+        let label = '';
+        if(current) {
+          const h2 = current.querySelector('h2');
+          if(current.dataset && current.dataset.title) {
+            label = current.dataset.title;
+          } else if (h2) {
+            label = h2.textContent.trim();
+          }
+        }
+
+        if (label) {
+          document.getElementById('slide-subtitle').textContent = label;
+          document.getElementById('slide-header').style.display = "flex";
+        } else {
+          document.getElementById('slide-subtitle').textContent = '';
+          document.getElementById('slide-header').style.display = "none";
+        }
+      }
+
+      Reveal.on('ready', updateStatus);
+      Reveal.on('slidechanged', updateStatus);
+      Reveal.on('fragmentshown', updateStatus);
+
+		</script>
+	</body>
+</html>
