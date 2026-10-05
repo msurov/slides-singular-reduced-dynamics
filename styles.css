@@ -1,20 +1,17 @@
 :root {
   --accent: #ffb703; /* bright accent (changeable) */
-  --titlebar-bg: rgba(180, 180, 250, 0.9);
-  --page-number-bg: rgba(180, 180, 250, 0.6);
-  --page-number-color: rgba(20, 20, 20, 1.0);
-  --title-text-color: rgba(30, 30, 50, 1.0);
-  --page-number-radius: 6pt;
-  --page-title-radius: 6pt;
+  --elements-bg: rgba(180, 180, 250, 0.9);
+  --elements-text-color: #202020F0;
+  --title-text-color: #101010F0;
+  --header-text-color: #202020F0;
+  --title-font-size: 24pt;
+  --header-font-size: 24pt;
+  --elements-radius: 0.2rem;
   --default-font-size: 12pt;
   --increased-font-size: 18pt;
-  --title-font-size: 26pt;
   --slide-info-font-size: 22pt;
-
-
+  --author-font-size: 16pt;
   --font-default: 'Plus Jakarta Sans', 'Inter', system-ui;
-
-  /*  */
 
   /* font-family: 'Quicksand', 'Nunito', 'Segoe UI', system-ui; */
   /*--presentation-font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;*/
@@ -31,6 +28,29 @@ html, body {
 .reveal {
   font-family: var(--font-default);
   font-size: var(--default-font-size);
+  color: #202020F8;
+}
+
+.reveal ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  text-align: left;
+  padding-left: 0.5em;
+  line-height: 1.0;
+}
+
+.reveal .left_sep {
+  border-left: 1px solid #698890ae;
+}
+
+.reveal ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  text-align: left;
+  padding-left: 0.5em;
+  line-height: 1.6;
 }
 
 .slide-header {
@@ -40,17 +60,17 @@ html, body {
   position: fixed;
   left: 0.6rem;
   top: 0.6rem;
-  background: var(--titlebar-bg);
-  color: var(--title-text-color);
+  background: var(--elements-bg);
+  color: var(--elements-text-color);
   padding: 4pt 8pt;
-  border-radius: var(--page-title-radius);
+  border-radius: var(--elements-radius);
   font-weight: 600;
   z-index: 100;
   box-shadow: 1pt 1pt 5pt rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4pt);
   height: 38pt;
   overflow: hidden;
-  font-size: var(--title-font-size);
+  font-size: var(--header-font-size);
   font-family: var(--font-default);
 }
 
@@ -60,10 +80,10 @@ html, body {
   position: fixed;
   left: 0.6rem;
   bottom: 0.6rem;
-  background: var(--titlebar-bg);
-  color: var(--title-text-color);
+  background: var(--elements-bg);
+  color: var(--elements-text-color);
   padding: 4pt 8pt;
-  border-radius: var(--page-title-radius);
+  border-radius: var(--elements-radius);
   font-weight: 500;
   z-index: 101;
   box-shadow: 1pt 1pt 5pt rgba(0, 0, 0, 0.6);
@@ -75,34 +95,53 @@ html, body {
 }
 
 .slide-foot .title {
-  font-weight: 550;
+  font-weight: 500;
 }
 
 .slide-foot .author {
-  font-weight: 550;
+  font-weight: 500;
   line-height: 1.2;
   margin-bottom: 10pt;
 }
 
 .reveal .slides .author {
-  font-size: var(--increased-font-size);
+  font-size: var(--author-font-size);
   font-weight: 500;
 }
 
 .reveal .slides .email {
-  font-size: var(--increased-font-size);
+  font-size: var(--author-font-size);
   font-weight: 600;
   color: #404080
 }
 
+.reveal .regular {
+  text-align: left;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin: 0.2rem 0rem;
+  line-height: 1.5;
+}
+
+.reveal .regular .title {
+  font-weight: 550;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: var(--increased-font-size);
+  line-height: 1.2;
+  color: rgba(30, 30, 30, 0.95);
+}
+
 .page-number {
   position: fixed;
-  right: 5rem;
+  right: 8rem;
   bottom: 0.6rem;
-  background: var(--titlebar-bg);
-  color: var(--title-text-color);
+  background: var(--elements-bg);
+  color: var(--elements-text-color);
+  border-radius: var(--elements-radius);
   padding: 6pt 10pt;
-  border-radius: var(--page-number-radius);
   font-weight: 500;
   z-index: 102;
   box-shadow: 1pt 1pt 3pt rgba(0, 0, 0, 0.6);
@@ -155,17 +194,17 @@ html, body {
 }
 
 .reveal .box {
-  border-left: 4pt solid rgba(180, 180, 180, 0.95);   /* accent color on left */
+  border-left: 4px solid rgba(180, 180, 180, 0.95);   /* accent color on left */
   background: rgba(180, 180, 180, 0.15); /* light transparent background */
   padding: 5pt 10pt;
-  margin-top: 10pt;
-  margin-left: 5pt;
-  margin-right: 15pt;
-  border-radius: 8pt;
+  margin-top: 5pt;
+  margin-left: 3px;
+  margin-right: 2pt;
+  border-radius: 0.2rem;
   line-height: 1.4;
-  color: #111;
   text-align: left;
-  box-shadow: 1pt 1pt 5pt rgba(0, 0, 0, 0.6);
+  font-size: 12pt;
+  box-shadow: 0.2rem 0.2rem 0.3rem rgba(92, 92, 92, 0.5);
 }
 
 .reveal .example {
@@ -176,6 +215,10 @@ html, body {
 .reveal .comment {
   border-left: 4pt solid rgba(180, 180, 180, 0.95);   /* accent color on left */
   background: rgba(180, 180, 180, 0.15); /* light transparent background */
+  font-size: 10pt;
+  line-height: 1;
+  padding: 0.5rem 0.5rem;
+  margin-bottom: 0.1rem;
 }
 
 .reveal .issue {
@@ -186,6 +229,11 @@ html, body {
 .reveal .note {
   border-left: 4pt solid rgba(180, 180, 180, 0.95);
   background: linear-gradient(135deg, #efeff5 0%, #e9e8f0 100%);
+}
+
+.reveal .problem {
+  border-left: 4pt solid #8787fa;
+  background: linear-gradient(135deg, #ddddff 0%, #dbd6f9 100%);
 }
 
 .reveal .remark {
@@ -210,16 +258,11 @@ html, body {
 
 .reveal .box .title {
   font-weight: 600;
-  margin-bottom: 5pt;
-  color: rgba(30, 30, 30, 0.95);
+  font-size: 14pt;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--header-text-color);
   text-decoration: underline;
-}
-
-.reveal .regular {
-  text-align: left;
-  padding: 5pt 10pt;
-  margin: 10pt 5pt;
-  line-height: 1.5;
 }
 
 .reveal .footnote {
@@ -232,49 +275,57 @@ html, body {
 }
 
 .reveal .video-frame {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  width: 100%;
+  margin: 3pt 4pt;
   padding: 0.2rem;
-  margin: 3pt 6pt;
+  text-align: center;
   box-sizing: border-box;
+  position: relative;   /* establishes containing block */
 }
 
 .reveal .video-frame .caption {
-  margin: 3pt 1pt 20pt;
+  display: block;
+  margin-top: 0;
+  margin-left: 0;
   line-height: 1.2;
-  position: fixed;
-  bottom: -100pt;
   background: rgba(255, 255, 255, 0.65);
   padding: 5pt 10pt;
   font-weight: 400;
   color: #111;
-  border-radius: 6pt;
+  border-radius: 0.2rem;
   box-shadow: 0 2pt 4pt rgba(0,0,0,0.2);
   text-align: left;
-  z-index: 10;
+  max-width: 99%;
 }
 
 .reveal .video-frame video {
   max-width: 100%;
   max-height: 95vh;
-  border-radius: 4pt;
-  /*box-shadow: 1pt 1pt 3pt rgba(0, 0, 0, 0.6);*/
+  border-radius: 0.2rem;
+  display: inline-block;
 }
 
-.reveal .video-credit {
+.reveal .video-frame .credit {
   position: absolute;
-  top: 10pt;
-  right: 10pt;
-  background: rgba(255, 255, 255, 0.65);
-  padding: 5pt 5pt;
-  font-weight: 500;
-  color: #111;
-  border-radius: 6pt;
-  box-shadow: 1pt 1pt 3pt rgba(0, 0, 0, 0.6);
-  text-align: right;
-  z-index: 11;
+  top: 0.4rem;          /* matches frame padding so it sits inside */
+  right: 0.4rem;
+  z-index: 10;          /* keeps it above the video */
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+.reveal .video-frame .credit a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.reveal .video-frame .credit a:hover {
+  text-decoration: underline;
 }
 
 .reveal .figure {
@@ -282,7 +333,7 @@ html, body {
   max-height: 100%;
   padding: 2pt 12pt;
   margin: 3pt 6pt;
-  border-radius: 5pt;
+  border-radius: 0.2rem;
   line-height: 0.1;
   box-shadow: 1pt 1pt 3pt rgba(0, 0, 0, 0.6);
   text-align: center;
@@ -305,14 +356,17 @@ html, body {
   margin: 6pt 2pt;
   background: rgba(220, 220, 240, 0.2);
   border-collapse: collapse;
-  border-radius: 5pt;
-  box-shadow: 1pt 1pt 1pt rgba(0, 0, 0, 0.2);
+  border-radius: 0.2rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem rgba(200, 200, 255, 0.3);
+  border-top: 1px solid rgba(20, 20, 80, 0.2);
+  border-bottom: 1px solid rgba(20, 20, 80, 0.2);
 }
 
 .reveal .table td {
   padding: 2pt 12pt;
-  border-right: 1px solid rgba(20, 20, 80, 0.4);
-  border-bottom: 1px solid rgba(20, 20, 80, 0.4);
+  border-right: 1px solid rgba(20, 20, 80, 0.2);
+  border-left: 1px solid rgba(20, 20, 80, 0.2);
+  border-bottom: 1px solid rgba(20, 20, 80, 0.2);
   white-space: nowrap;
 }
 
@@ -331,7 +385,7 @@ html, body {
 .reveal .theader {
   background: rgba(200, 200, 250, 0.6);
   color: rgba(20, 20, 80, 0.95);
-  border-radius: 5pt;
+  border-radius: 0.2rem;
 }
 
 .math-annotated {
@@ -345,7 +399,7 @@ html, body {
 .math-highlight {
   background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
   padding: 1px;
-  border-radius: 6px;
+  border-radius: 0.2rem;
   margin-top: 10pt;
   margin-left: 5pt;
   margin-right: 5pt;
@@ -357,7 +411,7 @@ html, body {
   position: relative;
   padding: 0.3rem 0.6rem;
   border: 2pt solid #333;
-  border-radius: 6pt;
+  border-radius: 0.2rem;
   background: rgba(255,255,255,0.3);
 }
 
@@ -370,7 +424,7 @@ html, body {
   color: #333;
   background: #fff;
   padding: 0 0.2em;
-  border-radius: 4pt;
+  border-radius: 0.2rem;
   box-shadow: 0 1pt 2pt rgba(0,0,0,0.15);
 }
 
@@ -412,8 +466,8 @@ html, body {
   transform: translate(-50%, -50%); /* Offset to perfectly center the box */
   margin: 0;
   color: #404040;
-  background: var(--titlebar-bg);
-  border-radius: 4pt;
+  background: var(--elements-bg);
+  border-radius: 0.2rem;
   width: 300pt;
   box-shadow: 1pt 1pt 5pt rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4pt);

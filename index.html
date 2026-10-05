@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 
-		<title>reveal.js - Math Plugin</title>
+		<title>Сингулярная редуцированная динамика</title>
 
 		<meta
 			name="viewport"
@@ -21,18 +21,19 @@
 	<body>
 
     <div id="slide-header" class="slide-header">
-      <iframe
+      <!-- <iframe
         src="sirius-logo.html?scale=1.1&basecolor=%234040F0&hicolor=%238080FF"
         width="60pt"
         height="50pt"
         frameborder="0"
         scrolling="no">
-      </iframe>
+      </iframe> -->
+      <img style="width: 50px;" src="assets/sirius-logo.svg" alt="sirius-logo">
       <div class="subtitle" id="slide-subtitle">##</div>
     </div>
 
-    <div style="position: fixed; right: 10pt; top: 5pt;">
-      <img style="width: 200px;" src="media/IFAC_Logo.gif" alt="IFAC-logo">
+    <div style="position: fixed; right: 1rem; top: 0.5rem;">
+      <img style="width: 220px; z-index: 105;" src="assets/sirius-logo-with-text.svg" alt="sirius-logo">
     </div>
 
     <div class="slide-foot">
@@ -63,38 +64,29 @@
 
         <section data-title="">
           <h1>
-            Сервосвязи и сингулярности редуцированной динамики в задачах планирования траекторий механических систем
+            Сервосвязи и сингулярности редуцированной динамики в <br>
+            задачах планирования траекторий механических систем
           </h1>
 
-          <br>
+          <div class="cols" style="margin-top: 20pt;">
 
-          <div class="cols">
-
-            <div>
-              <div style="flex: 0.8">
-                <div class="author" style="margin-top: 12pt; margin-bottom: 12pt; margin-left: 50pt; text-align: left;">
+            <div style="flex: 0.6; align-self: center;">
+              <div>
+                <div class="author" style="margin-top: 12pt; margin-bottom: 12pt; text-align: left;">
                   Максим Олегович Суров<br>
-                  <a class="email">&#9993 surov.mo@gmail.com</a>
+                  <a class="email">&#9993 surov.m.o@gmail.com</a>
                 </div>
               </div>
-
-              <div style="display: flex; gap: 0pt; align-items: margin-left; margin-left: 30pt; margin-top: 10pt;">
-                <div style="height: 100pt">
-                  <iframe
-                    src="sirius-logo.html?scale=2.0&period=8&basecolor=%23108090&hicolor=%23C0C0C0"
-                    width="110pt"
-                    height="100%"
-                    frameborder="0"
-                    scrolling="no">
-                  </iframe>
+              <div class="cols">
+                <div style="flex: 0.2">
+                  <img style="width: 80px;" src="assets/sirius-logo-anim.svg" alt="sirius-logo">
                 </div>
-                <div>
-                  <div class="organization-title">
-                    Сириус
-                  </div>
-                  <div class="organization-subtitle">
-                    научно-технологический университет <br>
-                    Сочи, Россия
+                <div style="flex: 0.8; text-align: left; align-self: center; font-weight: 600; color: #3295b2ff;">
+                  <div style="font-size: 20pt;">Сириус</div>
+                  <div style="font-size: 12pt;">
+                    научно-технологический 
+                    <br>
+                    университет
                   </div>
                 </div>
               </div>
@@ -102,88 +94,525 @@
 
             <div>
               <div class="video-frame">
-                <video src="media/forth-and-back.mp4" controls autoplay muted loop playsinline></video>
-                <div class="video-credit">
-                  <a href="https://youtu.be/v6cUUEJ9Aaw">youtu.be/v6cUUEJ9Aaw</a>
+                <video src="assets/forth-and-back.mp4" controls autoplay muted loop playsinline></video>
+                <div class="credit">
+                  <a href="https://youtu.be/hx9mxDxHBB0">youtu.be/hx9mxDxHBB0</a>
                 </div>
               </div>
             </div>
 
           </div>
-
         </section>
 
-        <section data-title="Неполноприводные роботы">
-          <div class="cols" style="align-items: center;">
-            <div class="regular" style="margin-top: 2rem">
-              Динамика робота описывается системой дифференциальных уравнений
-              $$
-                M\!\left(q\right)\ddot{q}+C\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) u,
-              $$
-              $$
-                \quad q \in \mathbb{R}^2,
-                \quad u \in \mathbb{R},
-                \quad x \equiv (q, \dot q) \in \mathbb{R}^4,
-              $$
-              где
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <td>$q$</td>
-                    <td>generalized coordinates</td>
-                  </tr>
-                  <tr>
-                    <td>$\dot q \equiv \frac{dq}{dt}$, $\ddot q \equiv \frac{d^2q}{dt^2}$</td>
-                    <td>generalized velocities and acceletations</td>
-                  </tr>
-                  <tr>
-                    <td>$u$</td>
-                    <td>control input</td>
-                  </tr>
-                  <tr>
-                    <td>$M(q) \in \mathbb{R}^{2\times 2}$</td>
-                    <td>positive definite symmetric matrix</td>
-                  </tr>
-                  <tr>
-                    <td>$C(q, \dot q) \in \mathbb{R}^{2\times 2}$</td>
-                    <td>a matrix function which is linear in $\dot q$</td>
-                  </tr>
-                  <tr>
-                    <td>$G(q) \in \mathbb{R}^2$</td>
-                    <td>contains potential forces</td>
-                  </tr>
-                  <tr>
-                    <td>$F(q) \in \mathbb{R}^{2}$</td>
-                    <td>is a nonzero vector field</td>
-                  </tr>
-                </tbody>
-              </table>
-              The system admits a periodic solution
-              $$
-                q_\star(t + T) = q_\star(t), \quad u_\star(t + T) = u_\star(t), \quad T > 0.
-              $$
+        <section data-title="Математическая Робототехника">
+          <div class="cols">
+            <div class="regular">
+              Научный центр информационных технологий и искусственного интеллекта /
+              Направление <em>"Математическая робототехника"</em>
+              <div class="title">
+                Задачи: 
+              </div>
+              <ul>
+                <li>Определить функциональные возможности робота: какие движения/манёвры в принципе доступны</li>
+                <li>Поиск (разработка алгоритмов) движений: ограниченная траектория из точки в точку, периодическое движение</li>
+                <li>Разработка законов управления &mdash; стабилизация найденного движения</li>
+              </ul>
+
+              <div class="title">
+                Пример
+              </div>
+              Пример робототехнической системы &mdash; <em>Pendubot</em><sup>*</sup> &mdash;
+              двойной математический маятник с управлением в первом сочленении. 
+              Для системы найдено несколько периодических траекторий, построена система обратной связи, 
+              обеспечивающая устойчивое движение вдоль траекторий.
+
+              <div class="footnote" style="max-width: 100%">
+                <sup>*</sup> Leonid Freidovich et. al., Periodic motions of the Pendubot via virtual holonomic constraints: Theory and experiments, Automatica 44 (2008) 785 – 791
+              </div>
+
             </div>
-            <div class="fragment fade-left">
-              <div class="box remark">
-                <title>Problem:</title>
-                Construct a state-feedback controller
-                $$u = u(q, \dot q),$$
-                such that the closed-loop system
-                $$
-                  M\left(q\right)\ddot{q}+C\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) \, u(q, \dot q)
-                $$
-                renders
-                $$
-                  x_\star(t) = \bigl(q_\star(t),\dot q_\star(t)\bigr)
-                $$
-                a solution that is <b>asymptotically orbitally stable</b>.
+            <div class="regular">
+              <div class="video-frame">
+                <video src="assets/pendubot-cropped.mov" controls autoplay muted loop playsinline></video>
+                <div class="credit">
+                  <a href="https://www.youtube.com/watch?v=6LA1a8v6vuI">youtu.be/6LA1a8v6vuI</a>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-			</div>
-		</div>
+        <section data-title="Математическая Робототехника">
+          <div class="cols">
+            <div class="regular">
+              Робот <em>Бабочка</em><sup>*</sup> состоит из поворотного звена &mdash; две параллельные пластины в форме цифры $8$. 
+              Звено приводится во вращение двигателем. В жёлобе между пластинами свободно катается шарик. 
+              Необходимо вращать пластины таким образом, чтобы шарик перекатывался из одной ямки в другую и не отрывался от поверхности.
+
+              <ul>
+                <li>Уравнения движения, модель контакта</li>
+                <li>Модельные приближения, условия, при которых модель является корректной</li>
+                <li>Задача поиска периодического решения, удовлетворяющего условиям (ограничения на силу реакции).</li>
+                <li>Построение стабилизирующей обратной связи.</li>
+              </ul>
+
+              <div class="footnote" style="max-width: 100%">
+                <sup>*</sup> M. Surov, et. al., "Case study in non-prehensile manipulation: planning and orbital stabilization of one-directional rollings for the “Butterfly” robot," 2015 ICRA, Seattle, WA, USA, 2015, pp. 1484-1489
+              </div>
+
+            </div>
+            <div class="regular">
+              <div class="video-frame">
+                <video src="assets/butterfly-sliding-control.mp4" controls autoplay muted loop playsinline></video>
+                <div class="credit">
+                  <a href="https://youtu.be/v6cUUEJ9Aaw">youtu.be/v6cUUEJ9Aaw</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section data-title="Математическая Робототехника" data-background-gradient="radial-gradient(#000, #333)">
+          <div class="video-frame">
+            <video src="assets/sync-butterfly-presentation.mp4" controls autoplay muted loop playsinline></video>
+            <div class="credit">
+              <a href="https://youtu.be/WtvYQWtRSiw">youtu.be/WtvYQWtRSiw</a>
+            </div>
+          </div>
+        </section>
+
+        <section data-title="Неполноприводные роботы">
+          <div class="cols">
+            <div class="regular" style="flex: 1.0;">
+              <div class="title">
+                Динамика робота
+              </div>
+              описывается системой дифференциальных уравнений
+              $$
+                M\!\left(q\right)\ddot{q}+C\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) u, 
+              $$
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td> $q \in \mathbb{R}^n$ </td>
+                    <td> обобщённые координаты </td>
+                  </tr>
+                  <tr>
+                    <td> $u \in \mathbb{R}^{n-1}$ </td>
+                    <td> управляющие сигналы </td>
+                  </tr>
+                  <tr>
+                    <td>$\dot q \equiv \frac{dq}{dt}$, $\ddot q \equiv \frac{d^2q}{dt^2}$</td>
+                    <td>обобщённые скорости и ускорения</td>
+                  </tr>
+                  <tr>
+                    <td>$M(q) \in \mathbb{R}^{n\times n}$</td>
+                    <td>матрица кинетической энергии,<br>
+                      положительно определённая</td>
+                  </tr>
+                  <tr>
+                    <td>$C(q, \dot q) \in \mathbb{R}^{n\times n}$</td>
+                    <td>матрица кориолисовых и центробежных сил,<br>
+                      линейна по $\dot q$</td>
+                  </tr>
+                  <tr>
+                    <td>$G(q) \in \mathbb{R}^n$</td>
+                    <td>содержит потенциальные силы</td>
+                  </tr>
+                  <tr>
+                    <td>$F(q) \in \mathbb{R}^{n \times (n-1)}$</td>
+                    <td>преобразует управляющие сигналы в обобщённые<br> силы, имеет полный ранг для всех $q$</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              Систему с $n$ степенями свободы и $\dim u < n$ будем называть <em><b>неполноприводной</b></em> механической системой.
+              <br>
+              Мы рассматриваем системы со <em><b>степенью неполноприводности</b></em> $$d = n - \dim u = 1.$$
+              Поскольку $\mathrm{rank} \, F(q) = n - 1$, степень неполноприводности постоянная.
+
+              <div class="footnote">Все коэффициенты уравнения динамики предполагаются гладкими функциями</div>
+            </div> <!-- col -->
+
+            <div class="regular left_sep" style="flex: 1.0;">
+              <div class="title">
+                Уравнения Лагранжа-Эйлера
+              </div> 
+              Натуральный лагранжиан представляет собой разность кинетической и потенциальной энергий
+              $$
+                L(q, \dot q) = \frac 1 2 \dot q^\top M(q) \dot q - U(q).
+              $$
+              Тогда
+              $$\begin{aligned}
+                G(q) &= \frac{\partial U(q)}{\partial q}, \\
+                C(q, \dot q) &= \sum_{i=1}^{n} \Gamma_{kij}(q) \dot q_i
+              \end{aligned}$$
+              где
+              $$
+                \Gamma_{kij}(q) =
+                  \frac{1}{2} \frac{\partial M_{ki}(q)}{\partial q_j} + 
+                  \frac{1}{2} \frac{\partial M_{kj}(q)}{\partial q_i} - 
+                  \frac{1}{2} \frac{\partial M_{ij}(q)}{\partial q_k}
+              $$
+              &mdash; символы Кристоффеля первого рода.
+
+              <br>
+              Опционально уравнения динамики могут включать диссипативные силы, к примеру силу вязкого трения $F_d(q, \dot q) = -D(q) \dot q$:
+              $$
+                M\!\left(q\right)\ddot{q}+C\left(q,\dot{q}\right)\dot{q} + D(q) \dot q + G\left(q\right) = F(q) u.
+              $$
+            </div> <!-- col -->
+
+          </div> <!-- cols -->
+        </section>
+
+        <section data-title="Примеры неполноприводных систем">
+          <div class="cols">
+            <div class="regular">
+            </div> <!-- col -->
+            <div class="regular left_sep">
+            </div> <!-- col -->
+          </div> <!-- cols -->
+        </section>
+
+        <section data-title="Реализуемые траектории">
+          <div class="cols">
+            <div class="regular">
+              Пара функций $q = q_\star(t)$, $u = u_\star(t)$:
+              $$
+                q_\star \in C^2\left(I, \mathbb{R}^n\right), \quad u_\star \in C^0\left(I, \mathbb{R}^{n-1}\right),
+              $$
+              является решением системы 
+              $$
+                M\!\left(q\right)\ddot{q}+C\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) u, 
+              $$
+              на некотором интервале $I \subseteq \mathbb{R}$, если равенство
+              $$
+                M\!\left(q_\star(t)\right)\ddot{q}_\star(t) + 
+                C\left(q_\star(t),\dot{q}_\star(t)\right)\dot{q}_\star(t) + 
+                G\left(q_\star(t)\right) = F(q_\star(t)) u_\star(t), 
+              $$
+              выполняется для всех $t \in I$. 
+              <br>
+              <br>
+
+              <div class="box problem">
+                <div class="title">
+                  Задача 1. Периодические траектории системы.
+                </div>
+                Существует $T > 0$, что 
+                $$
+                  q_\star(t + T) = q_\star(t), \quad u_\star(t + T) = u_\star(t).
+                $$
+              </div>
+
+              <div class="box problem">
+                <div class="title">
+                  Задача 2. Траектории, переводящие систему между заданными положениями.
+                </div>
+                Задано начальное положение системы $q_1 \in \mathbb{R}^n$ и конечное $q_2 \in \mathbb{R}^n$. Тогда
+                существует $T > 0$, что функция $q_\star(t)$ удовлетворяет
+                $$
+                  q_\star(0) = q_1, \quad q_\star(T) = q_2, \quad \dot q_\star(0) = \dot q_\star(T) = 0.
+                $$
+                Обычно точки $q_1, q_2$ являются положениями равновесия.
+              </div>
+
+            </div> <!-- col -->
+
+            <div class="left_sep">
+              <div class="regular">
+                <b>Дополнительные требования</b>, также, могут предъявляться к решению:
+                <br>
+                <ul>
+                  <li>ограничения на скорости, координаты;</li>
+                  <li>ограничения на мощность двигателя, максимальный момент на валу;</li>
+                  <li>ограничения на силы реакции.
+                  </li>
+                </ul>
+                <br>
+                Обычно эти ограничения задаются в виде системы неравенств
+                $$
+                  \phi\left(q_\star(t), \dot q_\star(t), u_\star(t)\right) \geq 0, \quad \forall t \in I.
+                $$
+
+                <b>В примере с Бабочкой:</b> сила нормального давления $f_n\left(q, \dot q, u\right)$ должна быть положительной 
+                $$
+                  f_n\left(q, \dot q, u\right) \geq 0,
+                $$
+                и тангенциальная составляющая силы реакции $f_t\left(q, \dot q, u\right)$
+                не должна превышать силу сухого трения:
+                $$
+                  f_t\left(q, \dot q, u\right) \leq \kappa f_n\left(q, \dot q, u\right),
+                $$
+                где $\kappa$ &mdash; коэффициент трения.
+              </div>
+            </div> <!-- col -->
+
+          </div> <!-- cols -->
+        </section>
+
+        <section data-title="Ограничения">
+          <div class="cols">
+
+            <div class="regular">
+              <div class="title">
+                Полноприводные системы
+              </div>
+              Матрица $F(q)$ является квадратной и обратимой: 
+              $$
+                \mathrm{rank} \, F(q) = n \quad \forall q.
+              $$
+              Для полноприводных систем любая функция $q_\star(t) \in C^2$ является реализуемой траекторией, 
+              т.к. уравнение
+              $$
+                M\!\left(q\right)\ddot{q}+C\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) u
+              $$
+              разрешимо относительно $u$. 
+              <br>
+              Для заданной $q_\star(t)$ существует входное управляющее воздействие,
+              $$
+                u_{\star}(t) = F^{-1}\!\left(q_{\star}(t)\right)\big(
+                    M\!\left(q_{\star}(t)\right)\ddot{q}_{\star}(t) + 
+                    C\left(q_{\star}(t),\dot{q}_{\star}(t)\right)\dot{q}_{\star}(t) + 
+                    G\left(q_{\star}(t)\right)
+                  \big),
+              $$
+              обеспечивающее движение вдоль $q_\star(t)$.
+            </div> <!-- col -->
+
+            <div class="regular left_sep">
+              <div class="title">
+                Неполноприводные системы
+              </div>
+              Не любая функция $q_\star$ является реализуемой траекторией. <br>
+              Если 
+              $$
+                F(q) \in \mathbb{R}^{n\times(n-1)}, \quad \mathrm{rank} \, F(q) = n-1,
+              $$
+              то существует левый аннигилятор
+              $$
+                F_\perp(q) \in \mathbb{R}^{1\times n} \setminus \{0\}: \quad F_\perp(q) \, F(q) = 0
+              $$
+              и левое псведообращение
+              $$
+                F^+(q) \in \mathbb{R}^{(n-1)\times n}: \quad F^+(q) \, F(q) = \mathbf{I}_{n-1},
+              $$
+              причём, $F_\perp$ и $F^+$ являются непрерывными функциями. 
+              <br>
+              <br>
+              Допустима декомпозиция уравнений динамики на две подсистемы
+              $$\begin{align}
+                F_{\perp}\!\left(q\right)M\!\left(q\right) & \, \ddot{q}+F_{\perp}\!\left(q\right)C\!\left(q,\dot{q}\right)\dot{q}+F_{\perp}\!\left(q\right)G\!\left(q\right)=0 \\
+                F^{+}\!\left(q\right)M\!\left(q\right) & \, \ddot{q}+F^{+}\!\left(q\right)C\!\left(q,\dot{q}\right)\dot{q}+F^{+}\!\left(q\right)G\!\left(q\right)=u.
+              \end{align}$$
+              Уравнение (1) определяет ограничение для функции $q_\star$, 
+              уравнение (2) &mdash; определяет соответствующее управления $u_\star$. 
+              <br>
+              Любая траектория, удовлетворяющая (1), является реализуемой.
+              <br>
+              Основная сложность задачи планирования &mdash; найти функцию $q_\star$, удовлетворяющую ограничению (1).
+            </div> <!-- col -->
+
+          </div> <!-- cols -->
+
+        </section>
+
+        <section data-title="Метод сервосвязей">
+          <div class="cols">
+
+            <div class="regular" style="margin-top: 5rem;">
+              Искомая траектория &mdash; $n$ скалярных функций $q(t) \equiv \left(q_1(t), q_2(t), \dots, q_n(t)\right)$ 
+              &mdash; должна удовлетворять одному скалярному уравнению
+              $$\begin{equation}
+                F_{\perp}\!\left(q\right)M\!\left(q\right) \, \ddot{q}+F_{\perp}\!\left(q\right)C\!\left(q,\dot{q}\right)\dot{q}+F_{\perp}\!\left(q\right)G\!\left(q\right)=0.
+              \end{equation}$$
+              Второе уравнение не вносит дополнительных ограничений, всегда можно выбрать подходящее $u$:
+              $$
+                u = F^{+}\!\left(q\right)M\!\left(q\right) \, \ddot{q}+F^{+}\!\left(q\right)C\!\left(q,\dot{q}\right)\dot{q}+F^{+}\!\left(q\right)G\!\left(q\right).
+              $$
+            </div> <!-- col -->
+
+            <div class="regular left_sep">
+              <div class="title">
+                Параметризация искомой траектории
+              </div>
+              Предположим, что искомая траектория лежит на некоторой кривой $Q$, которая имеет параметрическое представление
+              $$
+                q = Q(\mu)
+              $$
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td> $Q : \mathbb{R} \to \mathbb{R}^n$ </td>
+                    <td> сервосвязь (виртуальная голономная связь) </td>
+                  </tr>
+                  <tr>
+                    <td> $\mu \in \mathbb{R}$ </td>
+                    <td> параметр сервосвязи, генератор движения </td>
+                  </tr>
+                </tbody>
+              </table>
+              Тогда уравнение (3) определяет уравнение для переменной $\mu$:
+              $$
+                F_{\perp}M\frac{dQ}{d\mu}\ddot{\mu}+F_{\perp}\left(M\frac{d^{2}Q}{d\mu^{2}}+C\frac{dQ}{d\mu}\right)\dot{\mu}^{2}+F_{\perp}G=0
+              $$
+              Вводим обозначения
+              $$\begin{aligned}
+                \alpha\left(\mu\right) &:= F_{\perp}\!\left(Q\left(\mu\right)\right)M\!\left(Q\left(\mu\right)\right)\frac{dQ}{d\mu} \\
+                \beta\left(\mu\right)	&:= F_{\perp}\!\left(Q\left(\mu\right)\right)\left(M\!\left(Q\left(\mu\right)\right)\frac{d^{2}Q}{d\mu^{2}}+C\!\left(Q,\frac{dQ}{d\mu}\right)\frac{dQ}{d\mu}\right) \\
+                \gamma\left(\mu\right) &:= F_{\perp}\!\left(Q\left(\mu\right)\right)G\!\left(Q\left(\mu\right)\right).
+              \end{aligned}$$
+              <b><em>Редуцированная динамика:</em></b>
+              $$
+                \alpha\left(\mu\right)\ddot{\mu}+\beta\left(\mu\right)\dot{\mu}^{2}+\gamma\left(\mu\right)=0,
+              $$
+              коэффициенты $\alpha,\beta,\gamma : \mathbb{R} \to \mathbb{R}$.
+            </div> <!-- col -->
+
+          </div> <!-- cols -->
+        </section>
+
+        <section data-title="Редуцированная динамика">
+          <div class="cols">
+            <div class="regular">
+              Алгоритм поиска периодических траекторий
+              <ol>
+                <li>
+                  Выбираем некоторую сервосвязь $q = Q(\mu)$.
+                </li>
+                <li>
+                  Для данной связи выписываем редуцированную динамику
+                  $$\begin{equation}
+                    \alpha\left(\mu\right)\ddot{\mu}+\beta\left(\mu\right)\dot{\mu}^{2}+\gamma\left(\mu\right)=0.
+                  \end{equation}$$
+                </li>
+                <li>
+                  Находим периодическое решение $\mu_\star(t)$ редуцированной динамики.
+                </li>
+                <li>
+                  Подставляя это решение в выражение для сервосвязи, получим
+                  $$
+                    q_\star(t) = Q(\mu_\star(t)),
+                  $$
+                  которая является реализуемой траекторией исходной системы. 
+                </li>
+                <li>
+                  Соответствующее управление находится как
+                  $$
+                    u_\star(t) = F^{+}\!\left(q_\star(t)\right) \Big(
+                      M\!\left(q_\star(t)\right) \, \ddot{q}_\star(t) + 
+                      C\!\left(q_\star(t),\dot q_\star(t)\right)\dot{q}_\star(t)+
+                      G\!\left(q_\star(t)\right)
+                    \Big).
+                  $$
+                </li>
+              </ol>
+              <div class="title">Вывод</div> Задача поиска периодических траекторий динамической системы порядка $2n$ сводится к поиску периодических решений одного скалярного уравнения второго порядка.
+            </div> <!-- col -->
+            <div class="regular left_sep">
+              Уравнение (4) является скалярным уравнением 2-го порядка. Для таких уравнений хорошо развита качественная теория. 
+              Известны теоремы о существовании периодических решений.
+              <br>
+              Уравнение (4) имеет <b><em>первый интеграл</em></b>
+              $$
+                I\left(\mu,\dot{\mu}\right)	:=\frac{m\left(\mu\right)\dot{\mu}^{2}}{2}+n\left(\mu\right),
+              $$
+              где функции $m\left(\mu\right)>0$ и $n\left(\mu\right)$ определяются формулами
+              $$\begin{aligned}
+                m\left(\mu\right)	&:= \exp\left(2\int^{\mu}_{\mu_{0}}\frac{\beta\left(\nu\right)}{\alpha\left(\nu\right)}d\nu\right), \\
+                n\left(\mu\right)	&:= \int^{\mu}_{\mu_{0}}\frac{\gamma\left(w\right)}{\alpha\left(w\right)}\exp\left(2\int^{w}_{\mu_{0}}\frac{\beta\left(\nu\right)}{\alpha\left(\nu\right)}d\nu\right)dw.
+              \end{aligned}$$
+              Решение уравнения (4) выражается в квадратурах.
+
+              <div class="box issue">
+                <div class="title">Вопрос:</div> как искать сервосвязь $Q$?
+              </div>
+            </div> <!-- col -->
+          </div> <!-- cols -->
+        </section>
+
+        <section data-title="Поиск периодических решений в окрестности равновесия">
+          <div class="cols">
+            <div class="regular">
+              <div class="title">Пример</div>
+              Необходимо найти периодическую траекторию $q_\star(t)$, лежащую в малой окрестности положения равновесия $q_e$.
+              <br>
+              <div class="box comment">
+                Точка $q_e$ является равновесием системы
+                $$
+                  M\!\left(q\right)\ddot{q}+C\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) u, 
+                $$
+                если
+                $$
+                  F_\perp(q_e) \, G(q_e) = 0.
+                $$
+                Соответствующее константное решение 
+                $$
+                  q(t) = q_e, \quad u(t) = F^+(q_e) \, G(q_e).
+                $$
+              </div>
+
+              Определяем сервосвязь 
+              $$
+                q = Q(\mu) := q_e + V \mu + r(\mu) \mu^2,
+              $$
+              где $V\in\mathbb{R}^n$ &mdash; константный вектор, $r(\mu$ &mdash; произвольная гладкая функция.
+
+              Тогда, при выполнении условия
+              $$
+                F_\perp(q_e) M(q_e) V \ne 0,
+              $$
+              точка $\mu = 0$ является положением равновесия редуцированной динамики:
+              $$
+                \alpha(0) = F_\perp(q_e) M(q_e) V \ne 0, \quad 
+                \gamma(0) = F_\perp(q_e) G(q_e) = 0.
+              $$
+
+            </div> <!-- col -->
+            <div class="regular left_sep">
+            </div> <!-- col -->
+          </div> <!-- cols -->
+        </section>
+
+        <section data-title="">
+          <div class="cols">
+            <div class="regular">
+            </div> <!-- col -->
+            <div class="regular left_sep">
+            </div> <!-- col -->
+          </div> <!-- cols -->
+        </section>
+
+        <section data-title="">
+          <div class="cols">
+            <div class="regular">
+            </div> <!-- col -->
+            <div class="regular left_sep">
+            </div> <!-- col -->
+          </div> <!-- cols -->
+        </section>
+
+        <section data-title="">
+          <div class="cols">
+            <div class="regular">
+            </div> <!-- col -->
+            <div class="regular left_sep">
+            </div> <!-- col -->
+          </div> <!-- cols -->
+        </section>
+
+        <section data-title="">
+          <div class="cols">
+            <div class="regular">
+            </div> <!-- col -->
+            <div class="regular left_sep">
+            </div> <!-- col -->
+          </div> <!-- cols -->
+        </section>
+
+			</div> <!-- slides -->
+		</div> <!-- reveal -->
 
     <div class="page-number" id="page-number">1 / 1</div>
 
@@ -192,6 +621,11 @@
 
 		<script>
 			Reveal.initialize({
+        width: 1280,
+        height: 720,
+        margin: 0.03,
+        minScale: 0.2,
+        maxScale: 2.0,
 				history: true,
 				transition: 'linear',
 				mathjax4: {
