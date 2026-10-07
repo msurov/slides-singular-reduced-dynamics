@@ -10,326 +10,265 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview33"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="9.9517236"
-     inkscape:cx="150.72766"
-     inkscape:cy="81.141723"
-     inkscape:window-width="3440"
-     inkscape:window-height="1377"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="Layer_2" />
-  <defs
-     id="defs1">
+  <defs id="defs1">
      <style
         id="style1">
-       .cls-1 {
-          fill: #004278;
-          stroke: #80F0FF80;
-          stroke-width: 0.6;
+       .cls-side-star {
+         fill: #89caff;
+         stroke: none;
+         filter: url(#filter16);
        }
-       .cls-2 {
-         fill: #4bbecf;
+       .cls-contour {
+         fill: #3c6ee2;
+         stroke: none;
+         filter: url(#filter16);
        }
-       .cls-3 {
-         fill: #17dcff;
+       .cls-default {
+         fill: #89caff;
+         filter: url(#filter16);
+       }
+       .cls-blinking-star {
+         fill: #86d9ff;
          opacity: 1.0;
-         stroke: #ff505078;
+         stroke: #1bfbff80;
          stroke-width: 1;
-         stroke-opacity: 0.5;
+         stroke-opacity: 0.6;
        }
     </style>
     <g id="star">
-      <path class="cls-3"
-         d="m -2.7672649,-9.6309606 2.436024,6.5740863 L 5.147643,-8.8610271 2.8605413,-1.2140981 9.7718789,-2.3914824 3.1977928,0.04454159 9.0019459,5.5234255 1.3550165,3.2363238 2.5324008,10.147661 0.0963768,3.5735753 -5.3825071,9.3777284 -3.0954053,1.730799 -10.006743,2.9081833 -3.4326568,0.47215929 -9.2368096,-5.0067246 l 7.646929,2.2871018 z"
+      <path class="cls-blinking-star"
+         d="M -13.183313,-12.878585 -0.11743191,-0.88934242 14.29847,-13.233853 0.97697065,0.25835038 14.085308,14.24793 -0.1174318,1.2639358 -13.325421,13.253178 -1.2118344,0.2583504 Z"
       />
     </g>
+    <filter style="color-interpolation-filters:sRGB" id="filter16" x="-0.088294937" y="-0.083451533" width="1.2256426" height="1.213265">
+      <feFlood result="flood" in="SourceGraphic" flood-opacity="0.498039" flood-color="rgb(0,0,0)" id="feFlood14" />
+      <feGaussianBlur result="blur" in="SourceGraphic" stdDeviation="1.500000" id="feGaussianBlur14" />
+      <feOffset result="offset" in="blur" dx="2.000000" dy="2.000000" id="feOffset14" />
+      <feComposite result="comp1" operator="in" in="flood" in2="offset" id="feComposite15" />
+      <feComposite result="comp2" operator="over" in="SourceGraphic" in2="comp1" id="feComposite16" />
+    </filter>
   </defs>
 
+  <!-- contour -->
   <path
-     class="cls-2"
+     class="cls-contour"
      d="m 106.39,45.98 c -3.93,-2.94 -8.12,-6.09 -12.13,-9 -0.44,-0.32 -0.58,-0.25 -0.14,0.17 3.88,3.67 11.01,10.35 11.01,10.35 3.8,3.42 5.6,8.88 4.37,13.85 -0.55,2.23 -1.65,4.23 -3.15,5.94 0,0 -28.52,32.09 -35.86,40.63 -1.93,2.07 -4.85,3.05 -7.6,2.61 -4.87,-0.81 -35.32,-5.62 -35.32,-5.62 -2.31,-0.23 -4.59,-0.99 -6.19,-2.74 C 20.42,101.21 19.74,100 19.32,98.72 19.15,98.24 10.89,61.89 7.25,46.71 6.23,42.56 7.87,37.94 11.38,35.42 L 42.95,14.14 c 2.12,-1.4 5.23,-3.96 7.73,-4.55 3.76,-1.12 8.19,-0.39 11.45,1.93 0.55,0.37 8.48,5.97 11.86,8.35 0.33,0.23 0.39,0.17 0.09,-0.11 C 71.22,17.14 64.19,10.82 64.19,10.82 62.95,9.73 61.62,8.62 60.12,7.91 55.51,5.5 49.53,5.73 45.01,8.41 c 0,0 -35.48,20.71 -36.1,21.06 -6.05,3.34 -9.67,10.42 -8.77,17.28 1.35,7.53 11.61,54.9 12.01,55.79 2.32,5.85 8.01,9.76 14.22,10.3 6.03,0.92 33.99,4.87 35.49,5.08 5.6,0.81 11.45,-1.77 14.76,-6.28 3.07,-3.79 25.63,-32.31 32.57,-41.21 0.79,-1.01 1.59,-2.17 2.17,-3.33 C 115,60 112.93,50.62 106.4,45.98 Z"
-     id="path1"
-     style="fill:#004278;fill-opacity:1" />
+     id="path1"/>
+
+  <!-- inner star -->
   <path
-     class="cls-2"
+     class="cls-default"
      d="M 96.11,59.49 61.01,51.53 54.3,13.94 c -0.02,-0.11 -0.19,-0.09 -0.18,0.02 l 3.3,35.99 -40.76,-4.29 c -0.11,-0.01 -0.14,0.15 -0.03,0.18 l 40.38,9.87 -17.4,24.22 c -0.06,0.09 0.06,0.19 0.13,0.12 l 19.03,-17.99 7.41,41.54 c 0.02,0.11 0.19,0.09 0.18,-0.02 l -4.67,-48.12 34.37,4.2 c 0.11,0.01 0.14,-0.15 0.03,-0.18 z"
-     id="path2"
-     style="fill:#004278;fill-opacity:1" />
+     id="path2"/>
+
+  <!-- side star -->
   <path
-     class="cls-1"
+     class="cls-side-star"
      d="m 111.09,30.57 -2.75,-2.94 C 102.19,21.06 101.23,11.17 106,3.54 l 2.14,-3.42 c 0.05,-0.08 -0.05,-0.17 -0.12,-0.1 l -2.94,2.75 C 98.51,8.92 88.62,9.88 80.99,5.11 L 77.57,2.97 C 77.49,2.92 77.4,3.02 77.47,3.09 l 1.58,1.69 c 6.68,7.14 7.17,18.08 1.15,25.79 L 70.36,43 c -0.06,0.08 0.05,0.18 0.12,0.11 l 12.98,-11.4 c 6.53,-6.58 16.75,-7.76 24.61,-2.85 l 2.92,1.83 c 0.08,0.05 0.17,-0.05 0.1,-0.12 z M 93.84,22.81 c -3.25,0 -5.88,-2.63 -5.88,-5.88 0,-3.25 2.63,-5.88 5.88,-5.88 3.25,0 5.88,2.63 5.88,5.88 0,3.25 -2.63,5.88 -5.88,5.88 z"
      id="path3"
      style="fill:#4bbecf;fill-opacity:1">
      <animate
       attributeName="fill"
-      values="#3295b2ff; #3295b2ff; #A0E0FF; #3295b2ff; #3295b2ff"
+      values="#89caff; #89caff; #f99e9e; #89caff; #89caff"
       keyTimes="0;0.5;0.55;0.6;1"
       dur="5s"
       repeatCount="indefinite"
       calcMode="linear"/>
    </path>
+  
+  <!-- text -->
   <path
-     class="cls-2"
+     class="cls-default"
      d="m 145.31,59.89 c 3.38,1.71 6.42,2.25 8.86,2.68 l 17.37,3.21 c -1.28,-8.95 -10.34,-10.16 -15.01,-10.99 -2.19,-0.39 -6.07,-1.68 -8.52,-2.92 -4.43,-2.24 -6.34,-6.05 -7.45,-11.88 -0.09,-0.48 -0.24,-4.11 -0.24,-4.11 h 17.59 v 7.48 c 4.37,-0.08 7.82,-4.27 7.75,-9.36 v -6.38 h -33.72 c 0,0 -0.5,5.09 0.57,12.42 1.44,9.85 5.5,16.16 12.78,19.84 z"
-     id="path4"
-     style="fill:#004278;fill-opacity:1" />
+     id="path4"/>
   <path
-     class="cls-2"
+     class="cls-default"
      d="m 210.6,68.98 v -3.07 h 0.36 c 5.06,-0.2 9.24,-1.52 12.42,-3.92 3.47,-2.62 5.23,-7.31 5.23,-13.94 V 37.08 H 203.4 v 39.11 c 3.98,0 7.21,-3.23 7.21,-7.21 z m 0,-10.15 V 43.77 h 10.59 v 4.22 c 0,3.12 -0.49,5.53 -1.46,7.17 -0.96,1.62 -2.19,2.66 -3.77,3.21 -1.38,0.48 -3.06,0.76 -4.98,0.83 l -0.39,0.02 v -0.38 z"
-     id="path5"
-     style="fill:#004278;fill-opacity:1" />
+     id="path5"/>
   <path
-     class="cls-2"
+     class="cls-default"
      d="m 297.29,37.07 v 10.97 c 0,6.66 1.78,11.37 5.28,13.99 3.44,2.58 8.02,3.88 13.61,3.88 h 4.22 c 0,-3.69 -2.84,-6.76 -6.52,-7.04 -1.72,-0.13 -3.27,-0.3 -3.88,-0.51 -1.59,-0.54 -2.83,-1.57 -3.8,-3.15 v 0 c 0,0 -0.02,-0.04 -0.02,-0.04 -0.98,-1.61 -1.48,-4.03 -1.48,-7.19 v -4.22 h 10 v 5.28 h 1.53 c 2.9,0 5.25,-2.35 5.25,-5.25 l 0.03,-6.72 h -24.23 z"
-     id="path6"
-     style="fill:#004278;fill-opacity:1" />
+     id="path6"/>
   <path
-     class="cls-2"
+     class="cls-default"
      d="M 252.29,44.28 V 59.2 l -0.39,-0.02 c -1.91,-0.1 -3.57,-0.39 -4.94,-0.87 -1.57,-0.54 -2.79,-1.58 -3.75,-3.18 -0.97,-1.62 -1.46,-4.02 -1.46,-7.14 v -3.51 c 0,-4.09 -3.32,-7.41 -7.41,-7.41 v 10.97 c 0,6.66 1.78,11.37 5.28,13.99 3.44,2.57 8.02,3.88 13.61,3.88 h 6.26 V 37.07 h -7.21 v 7.21 z"
-     id="path7"
-     style="fill:#004278;fill-opacity:1" />
+     id="path7"/>
   <path
-     class="cls-2"
+     class="cls-default"
      d="M 290.47,57.83 V 37.07 h -7.21 v 16.35 l -0.39,-0.02 c -1.91,-0.1 -3.57,-0.39 -4.94,-0.87 -1.57,-0.54 -2.79,-1.58 -3.75,-3.18 -0.39,-0.65 -0.7,-2.8 -0.94,-5.11 -0.41,-4.07 -3.84,-7.16 -7.93,-7.16 v 5.19 c 0,6.62 1.75,11.31 5.2,13.94 3.13,2.38 7.25,3.7 12.22,3.91 l 0.41,0.02 -0.06,0.41 c -0.4,2.66 -1.48,4.58 -3.32,5.88 -0.59,0.42 -1.52,0.81 -2.55,1.17 -3.67,1.26 -6.13,4.73 -6.13,8.61 l 0.78,-0.04 c 3.18,-0.17 6.17,-0.9 8.89,-2.16 2.75,-1.28 5.06,-3.29 6.85,-5.96 1.79,-2.68 2.76,-6.11 2.86,-10.19 z"
-     id="path8"
-     style="fill:#004278;fill-opacity:1" />
+     id="path8"/>
   <path
-     class="cls-2"
+     class="cls-default"
      d="m 177.75,62.03 c 3.44,2.57 8.02,3.88 13.61,3.88 h 6.26 V 37.07 h -7.21 V 59.2 l -0.39,-0.02 c -1.91,-0.1 -3.57,-0.39 -4.94,-0.87 -1.57,-0.54 -2.79,-1.58 -3.75,-3.18 -0.97,-1.62 -1.46,-4.02 -1.46,-7.14 v -3.51 c 0,-4.09 -3.32,-7.41 -7.41,-7.41 v 10.97 c 0,6.66 1.78,11.37 5.28,13.99 z"
-     id="path9"
-     style="fill:#004278;fill-opacity:1" />
+     id="path9"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="135.87,82.71 135.87,90.73 137.53,90.73 137.53,87.43 141.51,87.43 141.51,90.73 143.17,90.73 143.17,82.71 141.51,82.71 141.51,85.99 137.53,85.99 137.53,82.71 "
-     id="polygon9"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon9"/>
   <path
-     class="cls-2"
+     class="cls-default"
      d="m 144.92,82.71 v 1.43 h 5.18 V 86 l -5.47,0.14 v 3.15 l 1.43,1.43 h 5.7 v -6.58 l -1.43,-1.43 z m 5.18,6.61 h -3.81 v -1.98 l 3.81,-0.29 v 2.26 z"
-     id="path10"
-     style="fill:#004278;fill-opacity:1" />
+     id="path10"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="156.08,88.18 154.4,82.71 152.71,82.71 154.88,89.58 157.34,89.58 156.83,91.3 153.15,91.3 153.15,92.73 158,92.73 161.01,82.71 159.33,82.71 157.72,88.18 "
-     id="polygon10"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon10"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="163.53,87.35 163.53,82.71 161.87,82.71 161.87,87.35 163.3,88.78 167.48,88.78 167.48,90.73 169.14,90.73 169.14,82.71 167.48,82.71 167.48,87.35 "
-     id="polygon11"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon11"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="176.38,85.99 172.4,85.99 172.4,82.71 170.74,82.71 170.74,90.73 172.4,90.73 172.4,87.43 176.38,87.43 176.38,90.73 178.04,90.73 178.04,82.71 176.38,82.71 "
-     id="polygon12"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon12"/>
   <path
-     class="cls-2"
+     class="cls-default"
      d="m 185.31,90.73 1.4,-1.4 v -5.21 l -1.4,-1.4 h -4.35 l -1.4,1.4 v 5.21 l 1.4,1.4 z m -4.09,-6.62 h 3.84 v 5.21 h -3.84 z"
-     id="path12"
-     style="fill:#004278;fill-opacity:1" />
+     id="path12"/>
   <rect
-     class="cls-2"
+     class="cls-default"
      x="188"
      y="85.339996"
      width="3.72"
      height="1.6"
-     id="rect12"
-     style="fill:#004278;fill-opacity:1" />
+     id="rect12"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="195.47,84.17 195.47,90.73 197.13,90.73 197.13,84.17 200.03,84.17 200.03,82.71 192.58,82.71 192.58,84.17 "
-     id="polygon13"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon13"/>
   <path
-     class="cls-2"
+     class="cls-default"
      d="M 207.75,90.73 V 89.3 h -5.07 v -2.12 h 5.35 v -4.47 h -5.61 l -1.4,1.4 v 5.21 l 1.4,1.4 h 5.32 z m -5.06,-6.65 h 3.85 v 1.89 l -3.85,0.14 z"
-     id="path13"
-     style="fill:#004278;fill-opacity:1" />
+     id="path13"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="217.27,82.71 215.41,82.71 213.87,85.89 212.67,85.89 211.12,82.71 209.26,82.71 211.25,86.46 209.07,90.73 210.93,90.73 212.54,87.32 214,87.32 215.6,90.73 217.46,90.73 215.28,86.46 "
-     id="polygon14"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon14"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="218.58,82.71 218.58,90.73 220.24,90.73 220.24,87.43 224.22,87.43 224.22,90.73 225.88,90.73 225.88,82.71 224.22,82.71 224.22,85.99 220.24,85.99 220.24,82.71 "
-     id="polygon15"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon15"/>
   <path
-     class="cls-2"
+     class="cls-default"
      d="m 228.8,82.71 -1.4,1.4 v 5.21 l 1.4,1.4 h 4.35 l 1.4,-1.4 v -5.21 l -1.4,-1.4 z m 4.09,6.61 h -3.84 v -5.21 h 3.84 z"
-     id="path15"
-     style="fill:#004278;fill-opacity:1" />
+     id="path15"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="241.68,90.73 243.34,90.73 243.34,82.71 237.58,82.71 236.45,89.24 235.48,89.24 235.48,90.73 237.84,90.73 238.99,84.1 241.68,84.1 "
-     id="polygon16"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon16"/>
   <path
-     class="cls-2"
+     class="cls-default"
      d="m 246.26,82.71 -1.4,1.4 v 5.21 l 1.4,1.4 h 4.35 l 1.4,-1.4 v -5.21 l -1.4,-1.4 z m 4.09,6.61 h -3.84 v -5.21 h 3.84 z"
-     id="path16"
-     style="fill:#004278;fill-opacity:1" />
+     id="path16"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="253.53,90.73 255.19,90.73 255.19,84.2 259.17,84.2 259.17,82.71 253.53,82.71 "
-     id="polygon17"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon17"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="266.34,90.73 267.99,90.73 267.99,82.71 266.07,82.71 261.9,88.88 261.9,82.71 260.26,82.71 260.26,90.73 262.17,90.73 266.34,84.58 "
-     id="polygon18"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon18"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="275.11,88.78 275.11,90.73 276.77,90.73 276.77,82.71 275.11,82.71 275.11,87.35 271.16,87.35 271.16,82.71 269.5,82.71 269.5,87.35 270.93,88.78 "
-     id="polygon19"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon19"/>
   <path
-     class="cls-2"
+     class="cls-default"
      d="m 278.29,84.11 v 5.21 l 1.4,1.4 h 5.32 v -1.43 h -5.07 v -2.12 h 5.35 V 82.7 h -5.61 l -1.4,1.4 z m 1.66,-0.03 h 3.85 v 1.89 l -3.85,0.14 z"
-     id="path19"
-     style="fill:#004278;fill-opacity:1" />
+     id="path19"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="288.4,84.2 293.35,84.2 293.35,82.71 288.14,82.71 286.74,84.11 286.74,89.32 288.14,90.73 293.35,90.73 293.35,89.24 288.4,89.24 "
-     id="polygon20"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon20"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="294.55,90.73 296.21,90.73 296.21,87.28 298.7,87.28 300.64,90.73 302.51,90.73 299.99,86.4 302.4,82.71 300.51,82.71 298.55,85.84 296.21,85.84 296.21,82.71 294.55,82.71 "
-     id="polygon21"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon21"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="309.51,90.73 311.16,90.73 311.16,82.71 309.24,82.71 305.07,88.88 305.07,82.71 303.43,82.71 303.43,90.73 305.34,90.73 309.51,84.58 "
-     id="polygon22"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon22"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="318.84,90.73 320.49,90.73 320.49,82.71 318.57,82.71 314.4,88.88 314.4,82.71 312.76,82.71 312.76,90.73 314.68,90.73 318.84,84.58 "
-     id="polygon23"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon23"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="313.7,80.02 314.79,81.82 318.46,81.82 319.54,80.02 318,80.02 317.63,80.82 315.62,80.82 315.25,80.02 "
-     id="polygon24"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon24"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="139.34,108.47 135.66,108.47 135.66,109.91 140.51,109.91 143.52,99.89 141.84,99.89 140.23,105.35 138.59,105.35 136.9,99.89 135.21,99.89 137.39,106.76 139.85,106.76 "
-     id="polygon25"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon25"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="146.12,104.61 150.1,104.61 150.1,107.9 151.76,107.9 151.76,99.89 150.1,99.89 150.1,103.16 146.12,103.16 146.12,99.89 144.46,99.89 144.46,107.9 146.12,107.9 "
-     id="polygon26"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon26"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="159.45,107.9 161.09,107.9 161.09,99.89 159.18,99.89 155.01,106.06 155.01,99.89 153.36,99.89 153.36,107.9 155.28,107.9 159.45,101.76 "
-     id="polygon27"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon27"/>
   <path
-     class="cls-2"
+     class="cls-default"
      d="m 169.71,103.09 v -2.03 l -1.17,-1.17 h -5.84 v 8.02 h 6.13 l 1.17,-1.17 v -2.15 l -1.1,-0.87 0.82,-0.62 z m -5.37,-1.86 h 3.74 v 1.95 h -3.74 z m 4,5.33 h -3.99 v -2.09 h 3.99 z"
-     id="path27"
-     style="fill:#004278;fill-opacity:1" />
+     id="path27"/>
   <path
-     class="cls-2"
+     class="cls-default"
      d="m 171.34,101.29 v 5.21 l 1.4,1.4 h 5.32 v -1.43 h -5.07 v -2.12 h 5.35 v -4.47 h -5.61 l -1.4,1.4 z m 1.66,-0.03 h 3.85 v 1.89 l -3.85,0.14 z"
-     id="path28"
-     style="fill:#004278;fill-opacity:1" />
+     id="path28"/>
   <path
-     class="cls-2"
+     class="cls-default"
      d="m 179.87,99.89 v 10.02 h 1.66 v -2 h 4.24 l 1.46,-1.46 v -5.1 l -1.46,-1.46 z m 5.7,6.58 h -4.04 v -5.15 h 4.04 z"
-     id="path29"
-     style="fill:#004278;fill-opacity:1" />
+     id="path29"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="190.32,101.37 195.27,101.37 195.27,99.89 190.06,99.89 188.66,101.29 188.66,106.5 190.06,107.9 195.27,107.9 195.27,106.41 190.32,106.41 "
-     id="polygon29"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon29"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="202.56,107.9 204.21,107.9 204.21,99.89 202.29,99.89 198.12,106.06 198.12,99.89 196.48,99.89 196.48,107.9 198.39,107.9 202.56,101.76 "
-     id="polygon30"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon30"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="212.74,99.89 205.29,99.89 205.29,101.35 208.18,101.35 208.18,107.9 209.85,107.9 209.85,101.35 212.74,101.35 "
-     id="polygon31"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon31"/>
   <path
-     class="cls-2"
+     class="cls-default"
      d="m 213.74,101.29 v 5.21 l 1.4,1.4 h 5.32 v -1.43 h -5.07 v -2.12 h 5.35 v -4.47 h -5.61 l -1.4,1.4 z m 1.66,-0.03 h 3.85 v 1.89 l -3.85,0.14 z"
-     id="path31"
-     style="fill:#004278;fill-opacity:1" />
+     id="path31"/>
   <polygon
-     class="cls-2"
+     class="cls-default"
      points="229.2,99.89 221.75,99.89 221.75,101.35 224.65,101.35 224.65,107.9 226.31,107.9 226.31,101.35 229.2,101.35 "
-     id="polygon32"
-     style="fill:#004278;fill-opacity:1" />
+     id="polygon32"/>
 
   <use href="#star">
     <animateTransform attributeName="transform" type="translate"
-       dur="14s" begin="1.3s" repeatCount="indefinite"
-       values="224,110; 276,110; 264,55; 226,107; 62,103; 214,28; 289,12; 22,73; 73,99"
-       keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1"
+       dur="14.3s" begin="0s" repeatCount="indefinite"
+       values="153,12; 142,110; 27,7; 279,36; 239,31;"
+       keyTimes="0;0.25;0.5;0.75;1;"
        calcMode="discrete"/>
-    <animate attributeName="opacity" dur="1.75s" begin="1.3s" repeatCount="indefinite"
-       values="0;1;0;0" keyTimes="0;0.1;0.5;1"/>
+    <animate attributeName="opacity" dur="3.575s" begin="0s" repeatCount="indefinite"
+       values="0;1;0;0" keyTimes="0;0.1;0.3;1"/>
   </use>
 
   <use href="#star">
     <animateTransform attributeName="transform" type="translate"
-       dur="15s" begin="0.8s" repeatCount="indefinite"
-       values="252,56; 242,92; 264,31; 232,31; 89,27; 113,78; 54,73; 63,45; 313,105"
-       keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1"
+       dur="15.0s" begin="-1s" repeatCount="indefinite"
+       values="164,12; 228,70; 120,13; 6,110; 230,111;"
+       keyTimes="0;0.25;0.5;0.75;1;"
        calcMode="discrete"/>
-    <animate attributeName="opacity" dur="1.875s" begin="0.8s" repeatCount="indefinite"
-       values="0;1;0;0" keyTimes="0;0.1;0.5;1"/>
+    <animate attributeName="opacity" dur="3.75s" begin="-1s" repeatCount="indefinite"
+       values="0;1;0;0" keyTimes="0;0.1;0.3;1"/>
   </use>
 
   <use href="#star">
     <animateTransform attributeName="transform" type="translate"
-       dur="15.3s" begin="0s" repeatCount="indefinite"
-       values="41,49; 78,96; 143,78; 304,17; 190,22; 31,79; 145,22; 257,107; 56,43"
-       keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1"
+       dur="15.3s" begin="-7s" repeatCount="indefinite"
+       values="41,49; 105,96; 260,107; 304,17; 190,22;"
+       keyTimes="0;0.25;0.5;0.75;1;"
        calcMode="discrete"/>
-    <animate attributeName="opacity" dur="1.9125s" begin="0s" repeatCount="indefinite"
-       values="0;1;0;0" keyTimes="0;0.1;0.5;1"/>
+    <animate attributeName="opacity" dur="3.825s" begin="-7s" repeatCount="indefinite"
+       values="0;1;0;0" keyTimes="0;0.1;0.3;1"/> 
   </use>
-
-  <!-- <use href="#star">
-    <animateTransform attributeName="transform" type="translate"
-       dur="15.7s" begin="1.2s" repeatCount="indefinite"
-       values="44,78; 208,107; 215,59; 77,41; 175,56; 196,9; 159,99; 110,105; 7,23"
-       keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1"
-       calcMode="discrete"/>
-    <animate attributeName="opacity" dur="1.9625s" begin="1.2s" repeatCount="indefinite"
-       values="0;1;0;0" keyTimes="0;0.1;0.5;1"/>
-  </use>
-
-  <use href="#star">
-    <animateTransform attributeName="transform" type="translate"
-       dur="16s" begin="1.8s" repeatCount="indefinite"
-       values="54,25; 282,97; 67,46; 50,75; 264,20; 47,74; 258,50; 206,23; 44,109"
-       keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1"
-       calcMode="discrete"/>
-    <animate attributeName="opacity" dur="2s" begin="1.8s" repeatCount="indefinite"
-       values="0;1;0;0" keyTimes="0;0.1;0.5;1"/>
-  </use> -->
 
 </svg>

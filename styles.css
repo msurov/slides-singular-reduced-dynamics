@@ -37,7 +37,7 @@ html, body {
   display: inline-block;
   text-align: left;
   padding-left: 0.5em;
-  line-height: 1.0;
+  line-height: 1.5;
 }
 
 .reveal .left_sep {
@@ -50,7 +50,7 @@ html, body {
   display: inline-block;
   text-align: left;
   padding-left: 0.5em;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .slide-header {
@@ -190,16 +190,17 @@ html, body {
 }
 
 .reveal section p {
-  line-height: 1.4;
+  line-height: 1;
 }
 
 .reveal .box {
   border-left: 4px solid rgba(180, 180, 180, 0.95);   /* accent color on left */
   background: rgba(180, 180, 180, 0.15); /* light transparent background */
-  padding: 5pt 10pt;
+  padding: 0.4rem 0.5rem;
   margin-top: 5pt;
   margin-left: 3px;
   margin-right: 2pt;
+  margin-bottom: 0.5rem;
   border-radius: 0.2rem;
   line-height: 1.4;
   text-align: left;
@@ -217,7 +218,7 @@ html, body {
   background: rgba(180, 180, 180, 0.15); /* light transparent background */
   font-size: 10pt;
   line-height: 1;
-  padding: 0.5rem 0.5rem;
+  padding: 0.4rem 0.5rem;
   margin-bottom: 0.1rem;
 }
 
@@ -353,20 +354,20 @@ html, body {
 
 .reveal .table {
   width: 99%;
-  margin: 6pt 2pt;
-  background: rgba(220, 220, 240, 0.2);
+  margin: 0.1rem 0.1rem;
+  background: rgba(220, 220, 240, 0.1);
   border-collapse: collapse;
   border-radius: 0.2rem;
-  box-shadow: 0.2rem 0.2rem 0.2rem rgba(200, 200, 255, 0.3);
+  box-shadow: 0.1rem 0.1rem 0.1rem rgba(200, 200, 255, 0.3);
   border-top: 1px solid rgba(20, 20, 80, 0.2);
   border-bottom: 1px solid rgba(20, 20, 80, 0.2);
 }
 
 .reveal .table td {
-  padding: 2pt 12pt;
+  padding: 0.1rem 0.5rem;
   border-right: 1px solid rgba(20, 20, 80, 0.2);
   border-left: 1px solid rgba(20, 20, 80, 0.2);
-  border-bottom: 1px solid rgba(20, 20, 80, 0.2);
+  border-bottom: 1px solid rgba(20, 20, 80, 0.1);
   white-space: nowrap;
 }
 
@@ -388,7 +389,7 @@ html, body {
   border-radius: 0.2rem;
 }
 
-.math-annotated {
+.reveal .math-annotated {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -396,18 +397,24 @@ html, body {
   justify-content: center;
 }
 
-.math-highlight {
-  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-  padding: 1px;
+.reveal .math-highlight {
+  background: linear-gradient(135deg, #0ad2ff30 0%, #0ad2ff40 100%);
+  padding: 0.01rem;
+  padding-right: 0.3rem;
   border-radius: 0.2rem;
-  margin-top: 10pt;
-  margin-left: 5pt;
-  margin-right: 5pt;
+  margin-top: 0.5rem;
+  margin-left: 0.1rem;
+  margin-right: 0rem;
+  margin-bottom: 0rem;
   text-align: center;
   box-shadow: 0 1pt 2pt rgba(0, 0, 0, 0.2);
 }
 
-.term {
+.reveal .katex-display {
+  margin: 0.6rem 0;
+}
+
+.reveal .term {
   position: relative;
   padding: 0.3rem 0.6rem;
   border: 2pt solid #333;
@@ -415,7 +422,7 @@ html, body {
   background: rgba(255,255,255,0.3);
 }
 
-.term .label {
+.reveal .term .label {
   position: absolute;
   bottom: -0.8em;
   left: 10%;
@@ -428,17 +435,17 @@ html, body {
   box-shadow: 0 1pt 2pt rgba(0,0,0,0.15);
 }
 
-.cols {
+.reveal .cols {
   display: flex;
   gap: 2pt;
   align-items: stretch;
 }
 
-.cols > div {
+.reveal .cols > div {
   flex:1
 }
 
-.process-flow {
+.reveal .process-flow {
   display: flex;
   align-items: center;       /* vertically center boxes and arrows */
   justify-content: center;   /* center the whole flow horizontally */
@@ -446,12 +453,12 @@ html, body {
   margin: 2rem 0;
 }
 
-.arrow {
+.reveal .arrow {
   font-weight: bold;
   color: #3057ff;
 }
 
-.bottom-right-image {
+.reveal .bottom-right-image {
   float: right;
   width: 120pt;
   height: auto;
