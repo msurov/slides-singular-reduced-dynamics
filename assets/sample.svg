@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_2"
+   data-name="Layer 2"
+   viewBox="0 0 321.52 118.07"
+   version="1.1"
+   sodipodi:docname="sample.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="19.903447"
+     inkscape:cx="-25.372489"
+     inkscape:cy="-1.0802149"
+     inkscape:window-width="3440"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="star" />
+  <g
+     id="star">
+    <path
+       class="cls-blinking-star"
+       d="M -13.183313,-12.878585 -0.11743191,-0.88934242 14.29847,-13.233853 0.97697065,0.25835038 14.085308,14.24793 -0.1174318,1.2639358 -13.325421,13.253178 -1.2118344,0.2583504 Z"
+       id="path1"
+       sodipodi:nodetypes="ccccccccc" />
+  </g>
+</svg>

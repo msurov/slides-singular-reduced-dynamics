@@ -2,7 +2,7 @@
 <svg
    id="Layer_2"
    data-name="Layer 2"
-   viewBox="0 0 321.52 118.07"
+   viewBox="0 0 322 125"
    version="1.1"
    sodipodi:docname="header_logo_new-1.svg"
    inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
@@ -71,7 +71,7 @@
       attributeName="fill"
       values="#89caff; #89caff; #f99e9e; #89caff; #89caff"
       keyTimes="0;0.5;0.55;0.6;1"
-      dur="5s"
+      dur="7s"
       repeatCount="indefinite"
       calcMode="linear"/>
    </path>
