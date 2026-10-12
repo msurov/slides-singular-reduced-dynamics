@@ -28,7 +28,7 @@
         frameborder="0"
         scrolling="no">
       </iframe> -->
-      <img style="width: 50px;" src="assets/sirius-logo.svg" alt="sirius-logo">
+      <!-- <img style="width: 50px;" src="assets/sirius-logo.svg" alt="sirius-logo"> -->
       <div class="subtitle" id="slide-subtitle">##</div>
     </div>
 
@@ -324,7 +324,7 @@
               </div>
               описывается системой дифференциальных уравнений
               $$
-                M\!\left(q\right)\ddot{q}+C\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) u, 
+                M\!\left(q\right)\ddot{q}+C\!\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) u, 
               $$
               <table class="table">
                 <tbody>
@@ -400,7 +400,7 @@
               $$
               тогда динамика будет
               $$
-                M\!\left(q\right)\ddot{q}+C\left(q,\dot{q}\right)\dot{q} + D(q) \dot q + G\left(q\right) = F(q) u.
+                M\!\left(q\right)\ddot{q}+C\!\left(q,\dot{q}\right)\dot{q} + D(q) \dot q + G\left(q\right) = F(q) u.
               $$
             </div> <!-- col -->
 
@@ -416,7 +416,7 @@
                 $$
                 является решением системы 
                 $$
-                  M\!\left(q\right)\ddot{q}+C\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) u, 
+                  M\!\left(q\right)\ddot{q}+C\!\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) u, 
                 $$
                 на некотором интервале $I \subseteq \mathbb{R}$, если равенство
                 $$
@@ -434,18 +434,22 @@
                 $$
                   q_\star(t + T) = q_\star(t), \quad u_\star(t + T) = u_\star(t).
                 $$
+                Траектория лежит в окрестности точки $q_0$:
+                $$
+                  q_\star(t) \in \mathbf{B}_\varepsilon(q_0) \quad \forall t.
+                $$
               </div>
 
               <div class="box problem">
                 <div class="title">
                   Задача 2. Траектории, переводящие систему между заданными положениями.
                 </div>
-                Задано начальное положение системы $q_1 \in \mathbb{R}^n$ и конечное $q_2 \in \mathbb{R}^n$. Тогда
+                Задано начальное положение системы $q_a \in \mathbb{R}^n$ и конечное $q_b \in \mathbb{R}^n$. Тогда
                 существует $T > 0$, что функция $q_\star(t)$ удовлетворяет
                 $$
-                  q_\star(0) = q_1, \quad q_\star(T) = q_2, \quad \dot q_\star(0) = \dot q_\star(T) = 0.
+                  q_\star(0) = q_a, \quad q_\star(T) = q_b, \quad \dot q_\star(0) = \dot q_\star(T) = 0.
                 $$
-                Обычно точки $q_1, q_2$ являются положениями равновесия.
+                Обычно точки $q_a, q_b$ являются положениями равновесия.
               </div>
 
             </div> <!-- col -->
@@ -482,53 +486,6 @@
           </div> <!-- cols -->
         </section>
 
-        <section data-title="Примеры неполноприводных систем">
-          <div class="cols">
-            <div style="flex: 1">
-              <figure class="figure">
-                <img src="assets/cart-pend-gen-coords.svg" alt="cart-pend-gen-coords">
-                <div class="caption">
-                  Маятник на тележке: $2$ степени свободы &mdash; $x$-координата тележки и угол наклона маятника. 
-                  Одно управление &mdash; сила, действующая на тележку.
-                </div>
-              </figure>
-            </div> <!-- col -->
-
-            <div style="flex: 1">
-              <figure class="figure">
-                <img src="assets/pvtol_gen_coords.svg" alt="pvtol_gen_coords">
-                <div class="caption">
-                  Вертолёт в вертикальной плоскости (PVTOL): $3$ степени свободы &mdash; $x,z$ координаты центра масс и угол $\psi$ определяет ориентацию.
-                  Два управления &mdash; суммарная тяга двигателей $u_1$ и момент силы $u_2$.
-                </div>
-              </figure>
-              
-            </div> <!-- col -->
-
-            <div style="flex: 1">
-              <figure class="figure">
-                <img src="assets/pendubot-schematic.svg" alt="pendubot-schematic" style="max-width: 60%;">
-                <div class="caption">
-                  Двойной математический маятник. Двигатель может быть закреплён в первом сочленении (Pendubot) или во втором (Acrobot). 
-                  Одно звено приводится во вращение двигателем, который создаёт момент $u$, второе &mdash; свободно вращается. 
-                  Система имеет две степени свободы.
-                </div>
-              </figure>
-            </div> <!-- col -->
-
-            <div style="flex: 1.2">
-              <figure class="figure">
-                <img src="assets/butterfly-gen-coords.svg" alt="pendubot-schematic">
-                <div class="caption">
-                  Робот "Бабочка". Рука робота (пластины в форме 8) приводятся во вращение мотором. Шарик свободно катается внутри жёлоба.
-                  В предположении идеального качения &mdash; без отрыва и без проскальзывания &mdash; система имеет 2 степени свободы и 1 управление (момент силы на валу двигателя).
-                </div>
-              </figure>
-            </div>
-
-          </div> <!-- cols -->
-        </section>
-
         <section data-title="Реализуемые траектории">
           <div class="cols">
 
@@ -536,16 +493,20 @@
               <div class="title">
                 Полноприводные системы
               </div>
-              Матрица $F(q)$ является квадратной и обратимой: 
+              Уравнения динамики
+              $$
+                M\!\left(q\right)\ddot{q}+C\!\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) u, 
+              $$
+              где матрица $F(q)$ является квадратной и обратимой: 
               $$
                 \mathrm{rank} \, F(q) = n \quad \forall q.
               $$
               Для полноприводных систем любая функция $q_\star \in C^2$ является реализуемой траекторией, 
               т.к. уравнение
               $$
-                M\!\left(q\right)\ddot{q}+C\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) u
+                M\!\left(q_\star(t)\right)\ddot{q}_\star(t)+C\!\left(q_\star(t),\dot{q}_\star(t)\right)\dot{q}_\star(t)+G\left(q_\star(t)\right) = F(q_\star(t)) \, u_\star(t)
               $$
-              разрешимо относительно $u$. 
+              разрешимо относительно $u_\star(t)$. 
               <br>
               Для заданной $q_\star(t)$ существует входное управляющее воздействие,
               $$
@@ -595,6 +556,54 @@
 
         </section>
 
+
+        <section data-title="Примеры неполноприводных систем">
+          <div class="cols">
+            <div style="flex: 1">
+              <figure class="figure">
+                <img src="assets/cart-pend-gen-coords.svg" alt="cart-pend-gen-coords">
+                <div class="caption">
+                  Маятник на тележке: $2$ степени свободы &mdash; $x$-координата тележки и угол наклона маятника. 
+                  Одно управление &mdash; сила, действующая на тележку.
+                </div>
+              </figure>
+            </div> <!-- col -->
+
+            <div style="flex: 1">
+              <figure class="figure">
+                <img src="assets/pvtol_gen_coords.svg" alt="pvtol_gen_coords">
+                <div class="caption">
+                  Вертолёт в вертикальной плоскости (PVTOL): $3$ степени свободы &mdash; $x,z$ координаты центра масс и угол $\psi$ определяет ориентацию.
+                  Два управления &mdash; суммарная тяга двигателей $u_1$ и момент силы $u_2$.
+                </div>
+              </figure>
+              
+            </div> <!-- col -->
+
+            <div style="flex: 1">
+              <figure class="figure">
+                <img src="assets/pendubot-schematic.svg" alt="pendubot-schematic" style="max-width: 60%;">
+                <div class="caption">
+                  Двойной математический маятник. Двигатель может быть закреплён в первом сочленении (Pendubot) или во втором (Acrobot). 
+                  Одно звено приводится во вращение двигателем, который создаёт момент $u$, второе &mdash; свободно вращается. 
+                  Система имеет две степени свободы.
+                </div>
+              </figure>
+            </div> <!-- col -->
+
+            <div style="flex: 1.2">
+              <figure class="figure">
+                <img src="assets/butterfly-gen-coords.svg" alt="pendubot-schematic">
+                <div class="caption">
+                  Робот "Бабочка". Рука робота (пластины в форме 8) приводятся во вращение мотором. Шарик свободно катается внутри жёлоба.
+                  В предположении идеального качения &mdash; без отрыва и без проскальзывания &mdash; система имеет 2 степени свободы и 1 управление (момент силы на валу двигателя).
+                </div>
+              </figure>
+            </div>
+
+          </div> <!-- cols -->
+        </section>
+
         <section>
           <h1>
             Метод сервосвязей
@@ -610,7 +619,7 @@
               $$\begin{equation}
                 F_{\perp}\!\left(q\right)M\!\left(q\right) \, \ddot{q}+F_{\perp}\!\left(q\right)C\!\left(q,\dot{q}\right)\dot{q}+F_{\perp}\!\left(q\right)G\!\left(q\right)=0.
               \end{equation}$$
-              Второе уравнение не вносит дополнительных ограничений, всегда можно выбрать подходящее $u:$
+              Второе уравнение не вносит дополнительных ограничений, всегда можно выбрать подходящее $u$:
               $$
                 u = F^{+}\!\left(q\right)M\!\left(q\right) \, \ddot{q}+F^{+}\!\left(q\right)C\!\left(q,\dot{q}\right)\dot{q}+F^{+}\!\left(q\right)G\!\left(q\right).
               $$
@@ -636,7 +645,7 @@
                   </tr>
                 </tbody>
               </table>
-              Тогда уравнение (3) определяет уравнение для переменной $\mu:$
+              Тогда уравнение (3) определяет уравнение для переменной $\mu$:
               $$
                 F_{\perp}M\frac{dQ}{d\mu}\ddot{\mu}+F_{\perp}\left(M\frac{d^{2}Q}{d\mu^{2}}+C\frac{dQ}{d\mu}\right)\dot{\mu}^{2}+F_{\perp}G=0
               $$
@@ -706,7 +715,7 @@
                 <li>
                   Фазовый портрет симметричен относительно оси $\dot \mu = 0$, поскольку уравнение инвариантно при $\dot\mu \mapsto -\dot\mu$.
                 </li>
-                <li>Уравнение (4) имеет <b><em>первый интеграл</em></b>
+                <li>Уравнение (4) имеет <b><em>первый интеграл</em></b><sup>*</sup>
                   $$\begin{aligned}
                     I\left(\mu,\dot{\mu}\right)	&:=\frac{m\left(\mu\right)\dot{\mu}^{2}}{2}+n\left(\mu\right), \quad \text{где} \\
                     m\left(\mu\right)	&:= \exp\left(2\int^{\mu}_{\mu_{0}}\frac{\beta\left(\nu\right)}{\alpha\left(\nu\right)}d\nu\right), \\
@@ -718,11 +727,17 @@
                 <li>
                   Можно свести к линейному неоднородному ОДУ:
                   $$
-                    y:=\frac{\dot{\mu}^{2}}{2}, \quad \frac{d}{dt}\mapsto\frac{d}{d\mu} \quad \implies \quad \alpha\left(\mu\right)\frac{dy}{d\mu}+2\beta\left(\mu\right)y+\gamma\left(\mu\right)=0.
+                    y:=\frac{\dot{\mu}^{2}}{2}, \quad \frac{d}{dt}\mapsto\frac{d}{d\mu} \quad \implies \quad 
+                    \alpha\!\left(\mu\right)\frac{dy}{d\mu}+2\beta\!\left(\mu\right)y+\gamma\!\left(\mu\right)=0.
                   $$
                   Общее решение уравнения (4) выписывается в квадратурах.
                 </li>
               </ul>
+
+              <div class="footnote">
+                * A. Shiriaev et al., Explicit Formulas for General Integrals of Motion for a Class of Mechanical Systems Subject to Virtual Constraints, 
+                IEEE Conference on Decision and Control, 2004
+              </div>
               
               <!-- <div class="box issue">
                 <div class="title">Вопрос:</div> как искать сервосвязь $Q$?
@@ -734,10 +749,12 @@
         <section data-title="Поиск периодических решений в окрестности равновесия">
           <div class="cols">
             <div class="regular">
-              <div class="title">
-                Пример
+              <div class="box problem">
+                <div class="title">
+                  Задача
+                </div>
+                Необходимо найти периодическую траекторию $q_\star(t)$, лежащую в малой окрестности положения равновесия $q_e$.
               </div>
-              Необходимо найти периодическую траекторию $q_\star(t)$, лежащую в малой окрестности положения равновесия $q_e$.
 
               <div class="box comment" style="margin-top: 0.5rem;">
                 Точка $q_e$ является равновесием системы
@@ -748,6 +765,7 @@
                 $$
                   F_\perp(q_e) \, G(q_e) = 0.
                 $$
+                Для разрешимости системы линейных уравнений, $G(q_e)$ должно принадлежать образу $F(q_e)$.
                 Соответствующее константное решение 
                 $$
                   q(t) = q_e, \quad u(t) = F^+(q_e) \, G(q_e).
@@ -869,6 +887,8 @@
         <section data-title="Пример: маятник на тележке">
           <div class="cols">
             <div class="regular" style="flex: 0.5;">
+              Найдём периодические траектории в окрестности верхнего положения равновесия системы $x_0 = 0, \theta_0 = 0$.
+              <br>
               Динамика системы (единичные массы, длина маятника и ускорение свободного падения):
               $$
                 \left[\begin{array}{cc}
@@ -915,7 +935,7 @@
               Представлено одно из решений, соответствующее начальным условиям $\theta(0) = -\frac{\pi}{4}$, $\dot\theta(0) = 0$.
               Результат был представлен в работе [*].
 
-              <div class="footnote" style="max-width: 100%; margin-top: 4rem;">
+              <div class="footnote" style="max-width: 100%; margin-top: 2rem;">
                 <sup>*</sup> A. Shiriaev et al. Periodic motion planning for virtually constrained Euler–Lagrange systems, <br>in Systems & Control Letters, 2006.
               </div>
 
@@ -1187,11 +1207,12 @@
               Если условия теоремы нарушаются, то гладкие решения могут существовать.
 
               <div class="title">Пример</div>
-              Рассмотрим уравнение
+              Уравнение
               $$
-                \mu \ddot \mu - \dot{\mu}^2 + 1 = 0.
+                \mu \, \ddot \mu - \dot{\mu}^2 + 1 = 0
               $$
-              Это уравнение имеет решения
+              имеет неустранимую сингулярность в точке $\mu = 0$.
+              Решения уравнения:
               $$
                 \mu(t) = a\cos\frac{t}{a}, \quad 
                 \mu(t) = a\sinh\frac{t}{a}, \quad 
@@ -1204,10 +1225,9 @@
                 \dot\mu(t_s) = \pm 1, \quad \ddot\mu(t_s) = 0, \quad
                 \mu^{(3)}(t_s)\in\left\{ \frac{1}{a^{2}},-\frac{1}{a^{2}},0\right\}.
               $$
-              Первые две производные совпадает, третьи производные отличаются.
-              Таким образом, нарушается единственность решений.
+              Первые две производные совпадают &mdash; нарушается единственность решений. Третьи производные отличаются.
             </div>
-            <div class="regular" style="padding: 0.01rem 0.01rem;">
+            <div class="regular" style="padding: 0.01rem 0.01rem; align-self: center;">
               <figure class="figure">
                 <img src="assets/sample-singular-phase-portrait.svg" alt="sample-singular-phase-portrait">
                 <div class="caption">
@@ -1220,7 +1240,7 @@
                 </div>
               </figure>
             </div>
-            <div class="regular" style="padding: 0.01rem 0.01rem;">
+            <div class="regular" style="padding: 0.01rem 0.01rem; align-self: center;">
               <div class="box note">
                 Существует класс подобных уравнений:
                 $$
@@ -1555,7 +1575,10 @@
           <div class="cols">
             <div class="regular" style="align-self: center; flex: 1.1">
               <div class="box problem">
-                <b>Задача:</b> найти периодическую траекторию маятника на тележке &mdash;
+                <div class="title">
+                  Задача
+                </div>
+                Найти периодическую траекторию (если она существует) маятника на тележке &mdash;
                 $$
                   \left[\begin{array}{cc}
                     2 & \cos\theta\\
@@ -1577,7 +1600,10 @@
                     0
                     \end{array}\right]u
                 $$              
-                в окрестности $q_0 \equiv (x_0, \theta_0)$.
+                в малой окрестности точки $q_0 \equiv (x_0, \theta_0)$.
+              </div>
+              <div class="title">
+                Решение
               </div>
               Выберем матрицу
               $$
@@ -1672,8 +1698,9 @@
                 $$
                   M\!\left(q\right)\ddot{q}+C\!\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F \, u,
                 $$
-                где $q \in \mathbb{R}^n$; $u \in \mathbb{R}^{n-1}$; $\mathrm{rank}\,F(q) = n-1$; $n\geq 2$;
-                в окрестности точки $q_0 \in \mathbb{R}^n$.
+                где $q \in \mathbb{R}^n$; $u \in \mathbb{R}^{n-1}$; $\mathrm{rank}\,F = n-1$; $n\geq 2$;
+                в окрестности точки $q_0 \in \mathbb{R}^n$, не являющейся положением равновесия.
+                <br>
                 Выберем $F_\perp$ таким образом, что 
                 $$
                   F_\perp G(q_0) > 0.
@@ -1777,6 +1804,18 @@
               <p style="margin-top: 2rem;">
                 Может ли вертолёт летать "на боку"? 
               </p>
+
+              $$\begin{aligned}
+                q_{*}\!\left(t\right) &= \left[\begin{array}{c}
+                    \sin t\\
+                    -\frac{1}{2}\sin^{2}t\\
+                    \frac{\pi}{2}-\arctan\left(2\sin t\right)
+                    \end{array}\right] \\
+                u_{*}\!\left(t\right) &= \left[\begin{array}{c}
+                    \sin t\sqrt{4\sin^{2}t+1}\\
+                    \frac{12\sin t+2\sin3t}{\left(3-2\cos2t\right)^{2}}
+                    \end{array}\right].
+              \end{aligned}$$
             </div>
 
             <div style="flex: 1; align-self: center;">
@@ -1802,16 +1841,24 @@
         <section data-title="Замкнутые сервосвязи">
           <div class="cols">
             <div class="regular no_padding" style="align-self: center;">
-              Рассмотренные ранее сервосвязи описывают движение системы вдоль кривой: сначала в одном направлении, потом в обратном. В конечных точках скорость системы обращается в ноль.
-              <br>
+              <div class="cols">
+                <div>
+                  Рассмотренные ранее сервосвязи описывают движение системы вдоль кривой: сначала в одном направлении, потом в обратном. В конечных точках скорость системы обращается в ноль.
+                </div>
+                <div>
+                  <img src="assets/closed-servoconstraints.svg" alt="permeable-singularities" style="width: 99%">
+                </div>
+              </div>
+              
               Возможен другой тип периодических траекторий: сервосвязь представляет собой замкнутую кривую. Система движется вдоль такой кривой без остановок.
+
               <div class="box theorem" style="margin-top: 0.5rem;">
                 <div class="title">
                   Утверждение
                 </div>
                 Рассмотрим механическую систему 
                 $$
-                  M\!\left(q\right)\ddot{q}+C\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) u,
+                  M\!\left(q\right)\ddot{q}+C\!\left(q,\dot{q}\right)\dot{q}+G\left(q\right) = F(q) u,
                 $$
                 где 
                 $$
@@ -1843,7 +1890,7 @@
                 Сервосвязь $q = Q(\mu)$ определяет простую регулярную замкнутую кривую.
                 Предположим противное: пусть 
                 $$
-                  \alpha(\mu) = F_\perp(Q(\mu)) M(Q(\mu)) Q^{\prime}(\mu) > 0
+                  \alpha(\mu) = F_\perp(Q(\mu)) \, M(Q(\mu)) \, Q^{\prime}(\mu) > 0
                 $$
                 (или $< 0$, что равносильно). Значит векторное поле  $V(q) := M^{-1}(q) F(q)$ 
                 &mdash; ортогональное ковекторному полю $q \mapsto F_\perp(q) M(q)$ &mdash; направлено всюду внутрь замкнутого контура $\mu \mapsto Q(\mu)$.
@@ -2041,7 +2088,6 @@
           </div>
         </section>
 
-
         <section data-title="Движение из положения равновесия">
           <div class="cols">
             <div class="regular">
@@ -2069,7 +2115,7 @@
                     Траектория движения точки $q(t)$ в конфигурационном пространстве определяет сервосвязь.
                   </li>
                 </ol>
-                <b>Вывод:</b> траектории, покидающие положение равновесия за конечное время существуют.
+                <b>Вывод:</b> траектории, покидающие за конечное положение равновесия время существуют.
             </div>
             <div class="regular left_sep">
               Если выбрать сервосвязь, при которой
@@ -2080,7 +2126,7 @@
               <br>
               Рассмотрим уравнение
               $$
-                \mu \ddot \mu  + \dot\mu^2 - \mu = 0
+                \mu \, \ddot \mu  + \dot\mu^2 - \mu = 0
               $$
               Решение 
               $$
@@ -2091,7 +2137,24 @@
                 \mu(0) = 0, \quad \dot \mu(t) = 0
               $$
               и покидает начало координат за конечное время.
-            </div>
+
+              <div class="box note" style="margin-top: 0.5rem;">
+                Достаточные условия существования решения
+                $$
+                  \alpha(0) = 0, \quad 
+                  \alpha^\prime(0) > 0, \quad 
+                  \beta(0) > 0, \\
+                  \gamma(0) = 0, \quad
+                  \gamma^\prime(0) \ne 0.
+                $$
+
+                Существуют другие классы сингулярностей, для которых выполняется
+                $$
+                  \alpha(0) = 0, \quad \gamma(0) = 0.
+                $$
+              </div>
+            </div> <!-- col -->
+
             <div class="regular" style="flex: 0.8; padding-left: 0.01rem;">
               <figure class="figure">
                 <img src="assets/sample_sing_equil.svg" alt="sample_sing_equil">
@@ -2110,18 +2173,80 @@
                   $$
                 </div>
               </figure>
+            </div> <!-- col -->
+          </div> <!-- cols -->
+        </section>
+
+        <section data-title="Алгоритм планирования траекторий">
+          <div class="cols">
+            <div class="regular" style="flex: 0.6">
+              <div class="title">
+                Подход к поиску траекторий
+              </div>
+              <ol>
+                <li>
+                  Определяем параметрическое семейство сервосвязей соединяющую точки $q_a$, $q_b$:
+                  $$
+                    q = Q(\mu, p), \quad 
+                    Q(0, p) = q_a, \quad 
+                    Q(1, p) = q_b,
+                  $$
+                  где $p$ &mdash; константные параметры.
+                </li>
+                <li>
+                  Подбираем параметры $p$ таким образом, чтобы 
+                  в точке $\mu = 0$:
+                  $$
+                    \alpha(0) = 0, \quad
+                    \alpha^\prime(0) > 0,  \quad
+                    \beta(0) > 0,  \quad
+                    \gamma(0) = 0 \quad
+                    \gamma^\prime(0) < 0.
+                  $$
+                  В точке $\mu = 1$:
+                  $$
+                    \alpha(1) = 0, \quad
+                    \alpha^\prime(1) > 0,  \quad
+                    \beta(1) > 0,  \quad
+                    \gamma(1) = 0 \quad
+                    \gamma^\prime(1) > 0.
+                  $$
+                  В точке $\mu = 0.5$ выполнялись условия Теоремы 1 (сингулярность типа узел):
+                  $$
+                    \alpha(0.5) = 0, \quad
+                    \alpha^\prime(0.5) < 0,  \quad
+                    \beta(0.5) > 1,  \quad
+                    \gamma(0.5) < 0.
+                  $$
+                </li>
+                <li>
+                  Находим решение с начальными условиями $\mu(0) = 0$, $\dot\mu(0) = 0$ и $\mu(0) = 1$, $\dot\mu(0) = 0$. 
+                  Склеиваем их в точке сингулярности &mdash; получаем функцию $\mu(t)$.
+                </li>
+                <li>
+                  Подставив 
+                  $$
+                    q(t) = Q(\mu(t)),
+                  $$
+                  получим искомую траекторию системы.
+                </li>
+              </ol>
+            </div>
+
+            <div style="flex: 0.4">
+              <figure class="figure">
+                <img src="assets/point_to_point_planning.svg" alt="sample_sing_equil">
+                <div class="caption">
+                  Фазовый портрет уравнения и графики коэффициентов
+                  $$
+                    \sin\left(2\pi\mu\right) \ddot{\mu}+9\dot{\mu}^{2}-5\sin\left(\pi\mu\right)=0
+                  $$
+                </div>
+              </figure>
             </div>
           </div>
         </section>
 
-        <section data-title="">
-          <div class="cols">
-            <div class="regular">
-            </div>
-            <div class="regular left_sep">
-            </div>
-          </div>
-        </section>
 
         <section>
           <h1>
@@ -2175,11 +2300,8 @@
           </div>
         </section>
 
-        <section data-title="Диссипативные системы">
+        <section data-title="Актуальные вопросы">
           <div class="box note" style="width: 50%">
-            <div class="title">
-              Актуальные вопросы
-            </div>
             <ol>
               <li>Непрерывная зависимость решения, проходящего через сингулярность типа "седло", от параметра в правой части.</li>
               <li>Вопрос существования решений, выходящих из положений равновесия за конечное время при наличии трения.</li>
