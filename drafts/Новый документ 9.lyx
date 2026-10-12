@@ -1,0 +1,337 @@
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children no
+\language american
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification default
+\crossref_package refstyle
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Formula $Q=q_{0}+\mu M^{-1}F+$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+
+\end_layout
+
+\begin_layout Standard
+1.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F_{\perp}:F_{\perp}\left(q_{0}\right)G\left(q_{0}\right)>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2.
+ 
+\end_layout
+
+\begin_layout Standard
+Матрица
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F^{\top}\left(\nabla_{F_{\perp}}M^{-1}\right)_{q=q_{0}}F$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha=F_{\perp}MQ'$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\beta=F_{\perp}MQ''+F_{\perp}CQ'$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\gamma=F_{\perp}G$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q\left(\mu\right)=q_{0}+\mu M^{-1}\left(q_{0}\right)F\left(q_{0}\right)V+\frac{1}{2}\mu^{2}W+O\left(\mu^{3}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q^{\prime}\left(\mu\right)=M^{-1}\left(q_{0}\right)F\left(q_{0}\right)V+\mu W+O\left(\mu^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q^{\prime\prime}\left(\mu\right)=W+O\left(\mu\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q^{\prime}\left(0\right)=M^{-1}\left(q_{0}\right)F\left(q_{0}\right)V$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q^{\prime\prime}\left(0\right)=W$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha=F_{\perp}MQ'$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha^{\prime}=\frac{d}{d\mu}\left(F_{\perp}M\right)Q'+F_{\perp}MQ''$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\alpha^{\prime}\left(0\right) & =\frac{d}{d\mu}\left(F_{\perp}M\right)_{q=q_{0}}Q^{\prime}\left(0\right)+F_{\perp}MQ^{\prime\prime}\left(0\right)\\
+ & =\frac{d}{d\mu}\left(F_{\perp}M\right)_{q=q_{0}}M^{-1}\left(q_{0}\right)F\left(q_{0}\right)V+F_{\perp}MW
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{d\mu}\left(F_{\perp}M\right) & =\frac{\partial}{\partial q}\left(F_{\perp}M\right)Q^{\prime}\\
+\frac{d}{d\mu}\left(F_{\perp}M\right)_{q=q_{0}} & =\frac{\partial}{\partial q}\left(F_{\perp}M\right)_{q=q_{0}}Q^{\prime}\left(0\right)\\
+ & =
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\alpha^{\prime}\left(0\right) & =\frac{d}{d\mu}\left(F_{\perp}M\right)_{q=q_{0}}Q^{\prime}\left(0\right)+F_{\perp}MQ^{\prime\prime}\left(0\right)\\
+ & =\left[\nabla_{M^{-1}\left(q_{0}\right)F\left(q_{0}\right)V}\left(F_{\perp}M\right)\right]M^{-1}\left(q_{0}\right)F\left(q_{0}\right)V+F_{\perp}MW
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,700 @@
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children no
+\language russian
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification default
+\crossref_package refstyle
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Formula $\left(\cos\theta\,\frac{dX}{d\theta}+1\right)\ddot{\theta}+\cos\theta\,\frac{d^{2}X}{d\theta^{2}}\dot{\theta}^{2}-\sin\Theta\!\left(\mu\right)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\theta=\Theta\!\left(\mu\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dot{\theta}=\frac{d\Theta}{d\mu}\dot{\mu}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ddot{\theta}=\frac{d^{2}\Theta}{d\mu^{2}}\dot{\mu}^{2}+\frac{d\Theta}{d\mu}\ddot{\mu}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left[\begin{array}{cc}
+2 & \cos\Theta\\
+\cos\Theta & 1
+\end{array}\right]\left[\begin{array}{c}
+\frac{d^{2}X}{d\mu^{2}}\dot{\mu}^{2}+\frac{dX}{d\mu}\ddot{\mu}\\
+\frac{d^{2}\Theta}{d\mu^{2}}\dot{\mu}^{2}+\frac{d\Theta}{d\mu}\ddot{\mu}
+\end{array}\right]-\left[\begin{array}{cc}
+0 & \sin\theta\frac{d\Theta}{d\mu}\\
+0 & 0
+\end{array}\right]\left[\begin{array}{c}
+\frac{dX}{d\mu}\\
+\frac{d\Theta}{d\mu}
+\end{array}\right]\dot{\mu}^{2}-\left[\begin{array}{c}
+0\\
+\sin\Theta
+\end{array}\right]=\left[\begin{array}{c}
+1\\
+0
+\end{array}\right]u$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\cos\Theta\left(\frac{d^{2}X}{d\mu^{2}}\dot{\mu}^{2}+\frac{dX}{d\mu}\ddot{\mu}\right)+\frac{d^{2}\Theta}{d\mu^{2}}\dot{\mu}^{2}+\frac{d\Theta}{d\mu}\ddot{\mu}-\sin\Theta=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(\cos\Theta\frac{dX}{d\mu}+\frac{d\Theta}{d\mu}\right)\ddot{\mu}+\left(\cos\Theta\frac{d^{2}X}{d\mu^{2}}+\frac{d^{2}\Theta}{d\mu^{2}}\right)\dot{\mu}^{2}-\sin\Theta=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q\left(\mu\right):=\left[\begin{array}{c}
+X\left(\mu\right)\\
+\Theta\left(\mu\right)
+\end{array}\right]:=q_{0}+v\mu\left[\begin{array}{c}
+1\\
+-\cos\theta_{0}
+\end{array}\right]+k\frac{\mu^{2}}{2}\left[\begin{array}{c}
+0\\
+1
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Theta\left(\mu\right)=\theta_{0}-\mu v\cos\theta_{0}+k\frac{\mu^{2}}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q'\left(\mu\right)=v\left[\begin{array}{c}
+1\\
+-\cos\theta_{0}
+\end{array}\right]+k\mu\left[\begin{array}{c}
+0\\
+1
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Theta'\left(\mu\right)=-v\cos\theta_{0}+k\mu$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q''\left(\mu\right)=k\left[\begin{array}{c}
+0\\
+1
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q'\left(0\right)=v\left[\begin{array}{c}
+1\\
+-\cos\theta_{0}
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Q''\left(0\right)=k\left[\begin{array}{c}
+0\\
+1
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha=F_{\perp}MQ'=\left(\cos\Theta-\cos\theta_{0}\right)v+k\mu$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\beta=F_{\perp}MQ''+F_{\perp}CQ'=k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\gamma=-\sin\Theta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha\left(\mu\right)=\left(\cos\theta_{0}-\cos\Theta\!\left(\mu\right)\right)v-k\mu$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\beta\left(\mu\right)=-k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\gamma\left(\mu\right)=\sin\Theta\!\left(\mu\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha'=\left(\sin\Theta\right)\left(-v\cos\theta_{0}+k\mu\right)v-k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha'\left(0\right)=-v^{2}\sin\theta_{0}\cos\theta_{0}-k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha'\left(0\right)=-\frac{1}{2}v^{2}\sin2\theta_{0}-k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\theta\in\left(0,\pi\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{\beta\left(0\right)}{\alpha^{\prime}\left(0\right)}<-\frac{1}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sin2\theta_{0}>-\frac{6}{v^{2}}k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $-\frac{3}{2}k<\frac{1}{4}v^{2}\sin2\theta_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $-\frac{6k}{v^{2}}<\sin2\theta_{0}<-\frac{2k}{v^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $6k>2k$
+\end_inset
+
+ 
+\begin_inset Formula $\implies$
+\end_inset
+
+ 
+\begin_inset Formula $k>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $-\frac{6k}{v^{2}}<\sin2\theta_{0}<-\frac{2k}{v^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sin2\theta_{0}<0$
+\end_inset
+
+ 
+\begin_inset Formula $\implies$
+\end_inset
+
+ 
+\begin_inset Formula $2\theta_{0}\in\left(\pi,2\pi\right)$
+\end_inset
+
+ 
+\begin_inset Formula $\implies$
+\end_inset
+
+ 
+\begin_inset Formula $\theta_{0}\in\left(\frac{\pi}{2},\pi\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+—
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha\left(0\right)=F_{\perp}MQ'=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha'\left(0\right)=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sin2\theta_{0}<-\frac{2k}{v^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha\left(\mu\right)=-\left(\cos\theta_{0}-\cos\Theta\!\left(\mu\right)\right)v+k\mu$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\beta\left(\mu\right)=k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\gamma\left(\mu\right)=-\sin\Theta\!\left(\mu\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha'=-\left(\sin\Theta\right)\left(-v\cos\theta_{0}+k\mu\right)v+k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha'\left(0\right)=v^{2}\sin\theta_{0}\cos\theta_{0}+k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha'\left(0\right)=\frac{1}{2}v^{2}\sin2\theta_{0}+k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\gamma\left(0\right)=-\sin\theta_{0}>0$
+\end_inset
+
+ 
+\begin_inset Formula $\implies$
+\end_inset
+
+ 
+\begin_inset Formula $\theta_{0}\in\left(-\pi,0\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{1}{2}v^{2}\sin2\theta_{0}+k>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{1}{2}v^{2}\sin2\theta_{0}>-k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $-3k>\frac{1}{2}v^{2}\sin2\theta_{0}>-k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $-k<\frac{1}{2}v^{2}\sin2\theta_{0}<-3k$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k>3k$
+\end_inset
+
+ then 
+\begin_inset Formula $k<0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
